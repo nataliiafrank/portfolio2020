@@ -1,0 +1,25 @@
+// Media Queries Mixins
+@mixin mq($bp-val, $type: 'min') {
+	$width: map-get($bp, $bp-val);
+
+	@if $type == 'max' {
+		$width: $width - 1;
+	}
+
+	@media only screen and (#{$type}-width: $width) {
+		@content;
+	}
+}
+
+// Responsive image ratio
+@mixin responsive-img($width, $height) {
+	padding-top: $height / $width * 100%;
+}
+
+@mixin pseudo($content: '', $z: -1) {
+	content: $content;
+	display: block;
+	position: absolute;
+	pointer-events: none;
+	$z-index: $z;
+}

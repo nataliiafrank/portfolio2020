@@ -1,0 +1,43 @@
+$font-body: 'Lato', Arial, Helvetica, sans-serif;
+$font-heading: 'Libre Baskerville', 'Times New Roman', Times, serif;
+
+body {
+	font-family: $font-body;
+	color: $c-cod-gray;
+	font-size: 1.6rem;
+	line-height: 20px;
+}
+
+.typography--body {
+	@extend %typography--body;
+}
+
+.typography--body-lg {
+	@extend %typography--body-lg;
+}
+
+.typography--eyebrow {
+	@extend %typography--eyebrow;
+}
+
+.typography--callout {
+	@extend %%typography--callout;
+}
+
+.typography {
+	&--heading-1 {
+		@extend %typography--heading-1;
+	}
+	&--heading-2 {
+		@extend %typography--heading-2;
+	}
+	&--heading-3 {
+		@extend %typography--heading-3;
+	}
+	&--heading-4 {
+		@extend %typography--heading-4;
+	}
+	&--heading-5 {
+		@extend %typography--heading-5;
+	}
+}

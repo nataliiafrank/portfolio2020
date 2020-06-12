@@ -1,0 +1,6 @@
+// .header
+@include block('header') {
+
+	//.header__container
+	@include element('container') {}
+}

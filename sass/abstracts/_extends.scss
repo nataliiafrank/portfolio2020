@@ -1,0 +1,186 @@
+// %padding-both
+@include extend('padding-both') {
+	padding-left: 16px;
+	padding-right: 16px;
+
+	@include mq('md') {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+
+	@include mq('lg') {
+		padding-left: calc(150 / $max-site-width * 100%);
+		padding-right: calc(150 / $max-site-width * 100%);
+	}
+
+	@include mq('xxl') {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}
+
+// %padding-slim
+@include extend('padding-slim') {
+	padding-left: 16px;
+	padding-right: 16px;
+
+	@include mq('md') {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+}
+
+// %padding-left
+@include extend('padding-left') {
+	padding-left: 16px;
+
+	@include mq('md') {
+		padding-left: 35px;
+	}
+
+	@include mq('lg') {
+		padding-left: calc(150 / $max-site-width * 100%);
+	}
+
+	@include mq('xxl') {
+		padding-left: 150px;
+	}
+}
+
+// %padding-right
+@include extend('padding-right') {
+	padding-right: 16px;
+
+	@include mq('md') {
+		padding-right: 35px;
+	}
+
+	@include mq('lg') {
+		padding-right: calc(150 / $max-site-width * 100%);
+	}
+
+	@include mq('xxl') {
+		padding-right: 150px;
+	}
+}
+
+//Background
+@include extend('bg-grey') {
+	background-color: $c-alabaster;
+}
+
+// Typography
+@include extend('typography') {
+	background-color: $c-alabaster;
+
+	// %typography--body
+	@include modifier('body') {
+		font-size: 1.6rem;
+		line-height: 30px;
+	}
+
+	// %typography--body-lg
+	@include modifier('body-lg') {
+		font-size: 1.8rem;
+		line-height: 24px;
+	}
+
+	// %typography--eyebrow
+	@include modifier('eyebrow') {
+		font-size: 1.2rem;
+		line-height: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	// %typography--callout
+	@include modifier('callout') {
+		font-size: 2.6rem;
+		font-style: italic;
+		letter-spacing: 0.08em;
+		line-height: 36px;
+		text-transform: uppercase;
+	}
+
+	// %typography--heading-1
+	@include modifier('heading-1') {
+		font-family: $font-heading;
+		font-size: 4.8rem;
+		letter-spacing: 0.08em;
+		line-height: 58px;
+
+		@include mq('md') {
+			font-size: 6.4rem;
+			line-height: 88px;
+		}
+
+		@include mq('lg') {
+			font-size: 8rem;
+			line-height: 88px;
+		}
+	}
+
+	// %typography--heading-2
+	@include modifier('heading-2') {
+		font-family: $font-heading;
+		font-size: 3.6rem;
+		letter-spacing: 0.08em;
+		line-height: 46px;
+
+		@include mq('md') {
+			font-size: 6rem;
+			line-height: 80px;
+		}
+		@include mq('lg') {
+			font-size: 6.8rem;
+			line-height: 88px;
+		}
+	}
+
+	// %typography--heading-3
+	@include modifier('heading-3') {
+		font-family: $font-heading;
+		font-size: 2.8rem;
+		letter-spacing: 0.08em;
+		line-height: 32px;
+
+		@include mq('md') {
+			font-size: 4.8rem;
+			line-height: 52px;
+		}
+		@include mq('lg') {
+			font-size: 5.8rem;
+			line-height: 66px;
+		}
+	}
+
+	// %typography--heading-4
+	@include modifier('heading-4') {
+		font-family: $font-heading;
+		font-size: 2.8rem;
+		letter-spacing: 0.08em;
+		line-height: 32px;
+
+		@include mq('lg') {
+			font-size: 5.8rem;
+			line-height: 66px;
+		}
+	}
+
+	// %typography--heading-5
+	@include modifier('heading-5') {
+		font-family: $font-heading;
+		font-size: 2.2rem;
+		letter-spacing: 0.08em;
+		line-height: 30px;
+
+		@include mq('md') {
+			font-size: 4rem;
+			line-height: 42px;
+		}
+		@include mq('lg') {
+			font-size: 5.8rem;
+			line-height: 60px;
+		}
+	}
+}

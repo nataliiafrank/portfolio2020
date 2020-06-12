@@ -1,0 +1,7 @@
+// .footer
+@include block('footer') {
+	@extend %bg-grey;
+
+	// .footer__container
+	@include element('container') {}
+}

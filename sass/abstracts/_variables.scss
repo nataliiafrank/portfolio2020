@@ -1,0 +1,20 @@
+// Colors
+$c-white: #fff;
+$c-alabaster: #f8f8f8;
+$c-alto: #dbdada;
+$c-cod-gray: #1D1D1D;
+$c-black: #000;
+
+// Screen sizes
+$bp: (
+	'sm': 320px,
+	'md': 768px,
+	'lg': 1024px,
+	'xl': 1200px,
+	'xxl': 1440px
+);
+
+$min-site-width: 320px;
+$max-site-width: 1440px;
+
+$transition: 0.25s;

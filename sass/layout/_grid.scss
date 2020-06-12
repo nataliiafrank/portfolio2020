@@ -1,0 +1,25 @@
+// container
+.container {
+	margin: 0 auto;
+	max-width: $max-site-width;
+
+	@include modifier('wide') {
+		max-width: 100%;
+	}
+}
+
+.u-padding-both {
+	@extend %padding-both;
+}
+
+.u-padding-slim {
+	@extend %padding-slim;
+}
+
+.u-padding-left {
+	@extend %padding-left;
+}
+
+.u-padding-right {
+ @extend %padding-right;
+}
