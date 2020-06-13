@@ -17,6 +17,7 @@ html{
 
 body{
 	box-sizing: border-box;
+	background-color: $c-alabaster;
 }
 
 .tablet {
@@ -87,6 +88,7 @@ a,button,[role='button'] {
 	cursor: pointer;
 	outline: 1px dashed transparent;
 	transition: $transition ease;
+	outline-offset: 1px;
 
 	// accesibility
 	&:focus,

@@ -13,8 +13,18 @@ const state = {
 	active: 'is-active',
 	desabled: 'is-disabled',
 	valid: 'is-valid',
-	invalid: 'is-invalid'
+	invalid: 'is-invalid',
+	open: 'is-open'
 }
 
 const domSelectors = {
+	toggleMenuButton: document.querySelector('.js-toggle-menu'),
 }
+
+const toggleMenu = (event) => {
+	const button = event.target;
+	button.classList.toggle(state.open);
+}
+
+// Event Listenres
+domSelectors.toggleMenuButton.addEventListener('click', toggleMenu);

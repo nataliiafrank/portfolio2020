@@ -1,6 +1,121 @@
 // .header
 @include block('header') {
-
 	//.header__container
-	@include element('container') {}
+	@include element('container') {
+		@extend %padding-both;
+		align-items: center;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		padding-top: 16px;
+	}
+
+	//.header__lang
+	@include element('lang') {
+		line-height: 0;
+	
+		//.header__lang__item
+		@include child('item') {
+			display: inline-block;
+
+			&:first-of-type {
+				.header__lang__button {
+					margin-right: 4px;
+				}
+			}
+
+			&:last-of-type {
+				border-left: 1px solid $c-cod-gray;
+
+				.header__lang__button {
+					margin-left: 8px;
+				}
+			}
+		}
+
+		//.header__lang__button
+		@include child('button') {
+			@extend %typography--eyebrow;
+			color: rgba($c-cod-gray, 0.4);
+
+			//.header__lang__buttton.is-active
+			@include state('active') {
+				color: rgba($c-cod-gray, 1);
+			}
+		}
+	}
+
+	//.header__toggle-menu
+	@include element('toggle-menu') {
+		width: 40px;
+		height: 13px;
+		cursor: pointer;
+		position: relative;
+		z-index: 3;
+
+		@include mq('md') {
+			display: none;
+		}
+
+		&::before,
+		&::after {
+			@include pseudo();
+			background-color: $c-cod-gray;
+			height: 1px;
+			left: 0;
+			width: 40px;
+		}
+
+		&:before {
+			top: 0px;
+			transition: top ($transition/2) ease ($transition/2), transform ease ($transition/2);
+		}
+		&:after {
+			bottom: 0px;
+			transition: bottom ($transition/2) ease ($transition/2), transform ease ($transition/2);
+		}
+
+		// .header__toggle-menu.is-open
+		@include state('open') {
+			&:before {
+				top: 6px;
+				transform: rotate(-20deg);
+				transition: top ease ($transition/2), transform ($transition/2) ease ($transition/2);
+			}
+			&:after {
+				bottom: 6px;
+				transform: rotate(20deg);
+				transition: bottom ease ($transition/2), transform ($transition/2) ease ($transition/2);
+			}
+		}
+	}
+
+	//.header__menu
+	@include element('menu') {
+		background-color: $c-alabaster;
+		height: 100vh;
+		margin-left: -16px;
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+		// display: none;
+
+		// @include state('is-open') {
+		// 	display: block;
+		// }
+
+		.nav__items {
+			align-items: center;
+			display: flex;
+			flex-flow: column nowrap;
+			height: 100%;
+			padding-top: 55px;
+		}
+
+		.nav__item {
+			margin-top: 60px;
+		}
+	}
 }
