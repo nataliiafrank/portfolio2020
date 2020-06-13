@@ -1,0 +1,25 @@
+{
+  "name": "portfolio2020",
+  "version": "1.0.0",
+  "description": "The name says it all",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nataliiafrank/portfolio2020.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nataliiafrank/portfolio2020/issues"
+  },
+  "homepage": "https://github.com/nataliiafrank/portfolio2020#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "sass": "^1.26.8"
+  }
+}
