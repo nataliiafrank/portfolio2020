@@ -19,11 +19,14 @@ const state = {
 
 const domSelectors = {
 	toggleMenuButton: document.querySelector('.js-toggle-menu'),
+	headerNav: document.querySelector('.js-header-nav'),
 }
 
 const toggleMenu = (event) => {
 	const button = event.target;
 	button.classList.toggle(state.open);
+
+	domSelectors.headerNav.classList.toggle(state.open);
 }
 
 // Event Listenres

@@ -2,12 +2,16 @@
 @include block('header') {
 	//.header__container
 	@include element('container') {
-		@extend %padding-both;
+		@extend %padding-slim;
 		align-items: center;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		padding-top: 16px;
+
+		@include mq('md') {
+			justify-content: flex-end;
+		}
 	}
 
 	//.header__lang
@@ -100,11 +104,13 @@
 		top: 0;
 		width: 100%;
 		z-index: 2;
-		// display: none;
+		display: none;
 
-		// @include state('is-open') {
-		// 	display: block;
-		// }
+		//.header__menu.is-open
+		@include state('open') {
+			animation: fadeIn $transition * 2 ease-in-out;
+			display: block;
+		}
 
 		.nav__items {
 			align-items: center;
@@ -116,6 +122,12 @@
 
 		.nav__item {
 			margin-top: 60px;
+		}
+
+		.nav__link {
+			@include mq('md', $type: 'max') {
+				font-size: 1.8rem;
+			}
 		}
 	}
 }

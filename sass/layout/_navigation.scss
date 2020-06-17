@@ -1,0 +1,20 @@
+// .nav
+@include block('nav') {
+
+	// .nav__items
+	@include element('items') {
+
+	}
+
+	// .nav__item
+	@include element('item') {
+
+	}
+
+	// .nav__link
+	@include element('link') {
+		&.link {
+			font-style: normal;
+		}
+	}
+}

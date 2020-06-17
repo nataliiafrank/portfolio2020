@@ -9,8 +9,8 @@
 	}
 
 	@include mq('lg') {
-		padding-left: calc(150 / $max-site-width * 100%);
-		padding-right: calc(150 / $max-site-width * 100%);
+		padding-left: calc(150 / 1440 * 100%);
+		padding-right: calc(150 / 1440 * 100%);
 	}
 
 	@include mq('xxl') {
@@ -39,7 +39,7 @@
 	}
 
 	@include mq('lg') {
-		padding-left: calc(150 / $max-site-width * 100%);
+		padding-left: calc(150 / 1440 * 100%);
 	}
 
 	@include mq('xxl') {
@@ -56,7 +56,7 @@
 	}
 
 	@include mq('lg') {
-		padding-right: calc(150 / $max-site-width * 100%);
+		padding-right: calc(150 / 1440 * 100%);
 	}
 
 	@include mq('xxl') {
