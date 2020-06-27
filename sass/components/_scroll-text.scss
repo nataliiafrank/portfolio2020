@@ -1,0 +1,40 @@
+// .scroll-text
+@include block('scroll-text') {
+
+	// .scroll-text__container
+	@include element('container') {
+		@extend %padding-both;
+	}
+
+	// .scroll-text__heading
+	@include element('heading') {
+	}
+
+	// .scroll-text__wrap
+	@include element('wrap') {
+		overflow: hidden;
+		padding-bottom: 260px;
+		padding-top: 200px;
+
+		@include mq('md') {
+			padding-bottom: 350px;
+			padding-top: 300px;
+		}
+
+		@include mq('lg') {
+			padding-bottom: 290px;
+			padding-top: 160px;
+		}
+	}
+
+	// .scroll-text__row
+	@include element('row') {
+		width: 5000px;
+	}
+
+	// .scroll-text__text
+	@include element('text') {
+		@extend %typography--heading-2;
+
+	}
+}

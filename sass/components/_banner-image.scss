@@ -1,0 +1,87 @@
+// .bunner-image
+@include block('banner-image') {
+
+	// .banner-image__container
+	@include element('container') {
+		@extend %padding-both;
+		padding-bottom: 160px;
+		padding-top: 20px;
+
+		@include mq('md') {
+			display: flex;
+			flex-flow: row nowrap;
+			padding-bottom: 305px;
+			padding-top: 310px;
+		}
+
+		@include mq('lg') {
+			padding-bottom: 120px;
+			padding-top: 200px;
+		}
+	}
+
+	// .banner-image__left
+	@include element('left') {
+		@include mq('md') {
+			flex: 0 0 50%;
+		}
+	}
+
+	// .banner-image__right
+	@include element('right') {
+		padding-top: 72px;
+
+		@include mq('md') {
+			padding-top: 0;
+			flex: 0 0 50%;
+		}
+
+		@include mq('lg') {
+			padding-top: 75px;
+		}
+	}
+
+	// .banner-image__image-wrap
+	@include element('image-wrap') {
+		@include responsive-img(268, 285);
+		width: calc(210 / 268 * 100%);
+		margin: 0 auto;
+
+		@include mq('md') {
+			@include responsive-img(251, 341);
+			width: calc(210 / 268 * 100%);
+		}
+
+		@include mq('lg') {
+			@include responsive-img(570, 510);
+			width: calc(375 / 570 * 100%)
+		}
+	}
+
+	// .banner-image__image
+	@include element('image') {
+		max-height: 100%;
+		min-height: 100%;
+	}
+
+	// .banner-image__right
+	@include element('right') {
+	}
+
+	// .banner-image__text
+	@include element('text') {
+		padding-top: 30px;
+
+		@include mq('md') {
+			padding-top: 60px;
+		}
+
+		@include mq('lg') {
+			padding-top: 66px;
+		}
+
+		p:not(:first-of-type) {
+			padding-top: 18px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+// .social
+@include block('social') {
+
+	// .social__items
+	@include element('items') {
+	}
+
+	// .social__item
+	@include element('item') {
+	}
+
+	// .social__link
+	@include element('link') {
+	}
+
+	// .social__icon
+	@include element('icon') {
+		height: 20px;
+		width: 20px;
+	}
+}

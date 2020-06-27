@@ -9,10 +9,14 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/banner-image";
+@import "components/scroll-text";
+
 @import "layout/footer";
 @import "layout/grid";
 @import "layout/header";
 @import "layout/navigation";
+@import "layout/social";
 
 @import "generic";
 @import "pages/home";

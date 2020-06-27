@@ -1,7 +1,11 @@
 // container
 .container {
 	margin: 0 auto;
-	max-width: $max-site-width;
+	position: relative;
+
+	@include mq('xxl') {
+		max-width: $max-site-width;
+	}
 
 	@include modifier('wide') {
 		max-width: 100%;

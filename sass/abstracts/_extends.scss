@@ -126,6 +126,7 @@
 		font-size: 3.6rem;
 		letter-spacing: 0.08em;
 		line-height: 46px;
+		text-transform: uppercase;
 
 		@include mq('md') {
 			font-size: 6rem;

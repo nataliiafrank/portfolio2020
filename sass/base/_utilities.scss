@@ -17,3 +17,24 @@
 		width: auto;
 	}
 }
+
+.u-section-heading {
+	@extend %typography--eyebrow;
+	position: relative;
+	padding-left: 26px;
+	margin-top: 16px;
+
+	@include mq('md') {
+		margin-top: 40px;
+	}
+
+	&::before {
+		@include pseudo();
+		background-color: $c-cod-gray;
+		height: 1px;
+		left: 0;
+		margin-top: -1px;
+		top: 50%;
+		width: 18px;
+	}
+}

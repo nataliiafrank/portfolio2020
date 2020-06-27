@@ -1,7 +1,9 @@
 .intro {
+	@extend %padding-slim;
 	height: calc(100vh - 30px);
 	min-height: 637px;
 	position: relative;
+	width: 100%;
 
 	// @include mq('md') {
 	// 	min-height: 994px;
@@ -18,17 +20,15 @@
 			bottom: 0;
 			display: block;
 			height: auto;
-			padding-bottom: 45px;
-			padding-left: 35px;
-			padding-right: 35px;
+			padding-bottom: 80px;
 			position: absolute;
 			top: auto;
-			width: 100%;
+			width: calc(100% - 70px);
 		}
 
 		@include mq('xxl') {
-			margin-left: calc((100vw - 1440px) / 2);
 			max-width: 1440px;
+			padding-bottom: 45px;
 		}
 
 		.nav__items {
@@ -48,6 +48,25 @@
 			@include mq('md') {
 				flex: 0 0 auto;
 			}
+		}
+	}
+
+	&__social {
+		bottom: 0;
+		left: 0;
+		margin-bottom: 80px;
+		margin-left: 16px;
+		position: absolute;
+
+		@include mq('md') {
+			bottom: 50%;
+			margin-bottom: 0;
+			margin-left: 35px;
+			transform: translate(0, -50%);
+		}
+
+		.social__item {
+			margin-bottom: 18px;
 		}
 	}
 }
