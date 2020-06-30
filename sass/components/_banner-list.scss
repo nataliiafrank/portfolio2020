@@ -1,0 +1,155 @@
+// .bunner-list
+@include block('banner-list') {
+
+	// .banner-list__container
+	@include element('container') {
+		@extend %padding-both;
+		padding-bottom: 288px;
+
+		@include mq('md') {
+			padding-top: 360px;
+			padding-bottom: 350px;
+		}
+
+		@include mq('lg') {
+			padding-bottom: 265px;
+			padding-top: 180px;
+		}
+	}
+
+	// .banner-list__heading
+	@include element('heading') {
+		@include mq('md') {
+			margin-top: 0;
+		}
+	}
+
+	// .banner-list__list
+	@include element('list') {
+		padding-top: 155px;
+		overflow: hidden;
+
+		@include mq('md') {
+			padding-top: 15px;
+		}
+
+		@include mq('lg') {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	// .banner-list__items
+	@include element('items') {
+	}
+
+	// .banner-list__item
+	@include element('item') {
+		margin-top: 35px;
+
+		@include mq('md') {
+			margin-bottom: 5px;
+			margin-top: 50px;
+		}
+
+		span {
+			@extend %typography--heading-5;
+			position: relative;
+			text-transform: uppercase;
+			white-space: nowrap;
+	
+			&::before {
+				@include pseudo;
+				background-color: $c-cod-gray;
+				bottom: 0;
+				height: 1px;
+				left: 0;
+				margin-bottom: 2px;
+				width: 100%;
+
+				@include mq('md') {
+					height: 3px;
+				}
+			}
+		}
+
+	}
+
+	// .banner-list__popup
+	@include element('popup') {
+		padding: 16px 16px 130px;
+		background-color: $c-alabaster;
+		position: absolute;
+		top: 0;
+		left:0;
+		width: 100%;
+		z-index: 1;
+
+		@include mq('md') {
+			padding: 120px 30px 176px;
+		}
+
+		@include mq('lg') {
+			left: auto;
+			margin-right: calc(149 / 1440 * 100%);
+			margin-top: 48px;
+			padding: 0;
+			right: 0;
+			min-width: 640px;
+			width: calc(673 / 1440 * 100%);
+		}
+
+		// .banner-list__popup__item
+		@include child('item') {
+
+		}
+
+		// .banner-list__popup__close
+		@include child('close') {
+			margin-bottom: 95px;
+
+			@include mq('md') {
+				margin-bottom: 40px;
+			}
+
+			&.close {
+				@include mq('lg') {
+					display: none;
+				}
+			}
+		}
+
+		// .banner-list__popup__image-wrap
+		@include child('image-wrap') {
+			@include responsive-img(343, 278);
+
+			@include mq('md') {
+				@include responsive-img(674, 546);
+			}
+		}
+
+		// .banner-list__popup__image
+		@include child('image') {
+			max-width: 100%;
+		}
+
+		// .banner-list__popup__body
+		@include child('body') {
+			padding-top: 16px;
+
+			@include mq('md') {
+				padding-top: 32px;
+			}
+		}
+
+		// .banner-list__popup__text
+		@include child('text') {
+			text-align: center;
+
+			@include mq('md') {
+				margin: 0 auto;
+				max-width: 485px;
+			}
+		}
+	}
+}

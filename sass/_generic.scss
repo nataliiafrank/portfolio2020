@@ -16,3 +16,31 @@
 		}
 	}
 }
+
+.close {
+	cursor: pointer;
+	display: block;
+	height: 13px;
+	position: relative;
+	width: 40px;
+	z-index: 3;
+
+	&::before,
+	&::after {
+		@include pseudo();
+		background-color: $c-cod-gray;
+		height: 1px;
+		left: 0;
+		width: 40px;
+	}
+
+	&:before {
+		top: 6px;
+		transform: rotate(-20deg);
+	}
+
+	&:after {
+		bottom: 6px;
+		transform: rotate(20deg);
+	}
+}
