@@ -1,0 +1,112 @@
+// .banner-callout
+@include block('banner-callout') {
+
+	// .banner-callout__container
+	@include element('container') {
+		@extend %padding-slim;
+		padding-bottom: 185px;
+
+		@include mq('md') {
+			padding-bottom: 380px;
+		}
+
+		@include mq('lg') {
+			padding-bottom: 420px;
+		}
+	}
+
+	// .banner-callout__wrap
+	@include element('wrap') {
+		position: relative;
+
+		@include mq('md') {
+			text-align: center;
+		}
+	}
+
+	// .banner-callout__title
+	@include element('title') {
+		@extend %typography--heading-3;
+		display: inline-block;
+		margin-top: 220px;
+		position: relative;
+
+		@include mq('md', $type: "max"){
+			line-height: 42px;
+		}
+
+		@include mq('md') {
+			margin-top: 470px;
+			text-align: center;
+			max-width: 100%;
+		}
+
+		@include mq('lg') {
+			margin-top: 320px;
+		}
+	}
+
+	// .banner-callout__link
+	@include element('link') {
+		display: inline-block;
+		position: relative;
+
+		@include mq('md', $type: "max"){
+			line-height: 32px;
+		}
+
+		@include mq('lg') {
+			transition: hover $transition ease-in-out;
+
+			&:hover {
+				color: $c-white;
+			}
+		}
+
+		&::before {
+			@include pseudo;
+			background-color: $c-cod-gray;
+			bottom: 0;
+			height: 1px;
+			left: 0;
+			margin-bottom: 2px;
+			width: 100%;
+
+			@include mq('md') {
+				height: 3px;
+			}
+		}
+	}
+
+	// // .banner-callout__arrow
+	// @include element('arrow') {
+	// 	height: 56px;
+  //   left: 0;
+  //   margin-top: 150px;
+  //   position: absolute;
+  //   top: 0;
+  //   transform: translateY(-50%) rotate(-90deg);
+  //   width: 65px;
+
+	// 	@include mq('md') {
+	// 	}
+	// }
+
+	// // .banner-callout__cv
+	// @include element('cv') {
+	// 	height: 178px;
+	// 	left: auto;
+	// 	margin-right: 17px;
+	// 	margin-top: -20px;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	width: 148px;
+	// 	z-index: -1;
+
+	// 	@include mq('md') {
+	// 	}
+
+	// 	@include mq('lg') {
+	// 	}
+	// }
+}
