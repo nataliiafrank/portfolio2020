@@ -1,6 +1,30 @@
 // .footer
 @include block('footer') {
+	color: $c-white;
 
 	// .footer__container
-	@include element('container') {}
+	@include element('container') {
+		@extend %padding-slim;
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 60px;
+		padding-top: 35px;
+
+		@include mq('md') {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+	}
+
+	// .footer__nav
+	@include element('nav') {
+		width: 200px;
+	}
+
+	// .footer__social
+	@include element('social') {
+		fill: $c-white;
+		height: 115px;
+		width: 22px;
+	}
 }

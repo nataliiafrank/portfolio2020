@@ -1,8 +1,9 @@
 .button {
-	color: $c-white;
-	padding: 10px 0;
 	background-color: $c-cod-gray;
+	color: $c-white;
+	min-height: 40px;
 	min-width: 218px;
+	padding: 10px 0;
 }
 
 .link {

@@ -36,6 +36,14 @@ body{
 	}
 }
 
+.desktop-hide {
+	display: block;
+
+	@include mq('lg') {
+		display: none;
+	}
+}
+
 .is-hidden {
 	display: none;
 }
@@ -99,4 +107,24 @@ a,button,[role='button'] {
 	&:active {
 		outline: 1px dashed $c-cod-gray;
 	}
+}
+
+input,
+select,
+textarea {
+	border: none;
+	color: inherit;
+}
+
+input,
+textarea {
+	&:focus,
+	&:active {
+		// border: 1px solid $c-alto;
+		outline: 2px solid $c-alto;
+	}
+}
+
+textarea {
+	resize: none;
 }

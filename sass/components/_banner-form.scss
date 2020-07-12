@@ -1,0 +1,111 @@
+// .banner-form
+@include block('banner-form') {
+
+	// .banner-form__container
+	@include element('container') {
+		@extend %padding-both;
+		padding-bottom: 80px;
+
+		@include mq('md') {
+			padding-bottom: 195px;
+
+			@include mq('lg', $type: 'max') {
+				padding-right: calc(290 / 768 * 100%);
+			}
+		}
+
+		@include mq('lg') {
+			display: flex;
+			flex-flow: row nowrap;
+			padding-bottom: 205px;
+		}
+	}
+
+	// .banner-form__left
+	@include element('left') {
+		padding-top: 75px;
+
+		@include mq('md') {
+			padding-top: 160px;
+		}
+
+		@include mq('lg') {
+			flex: 0 0 auto;
+			padding-right: calc(200 / 1140 * 100%);
+			padding-top: 50px;
+			width: calc(100% - 440px);
+		}
+	}
+
+	// .banner-form__right
+	@include element('right') {
+		padding-top: 60px;
+
+		@include mq('lg') {
+			flex: 0 0 auto;
+			padding-top: 0;
+			width: 440px;
+		}
+	}
+
+	// .banner-form__heading
+	@include element('heading') {
+		@include mq('lg') {
+			margin-top: 0;
+			margin-bottom: 35px;
+		}
+	}
+
+	// .banner-form__status
+	@include element('status') {
+		@extend %typography--callout;
+		max-width: 305px;
+		padding-top: 60px;
+
+		@include mq('lg') {
+		}
+	}
+
+	// .banner-form__form
+	@include element('form') {
+		font-style: italic;
+
+		input,
+		textarea {
+			color: $c-cod-gray;
+			margin-top: 12px;
+			padding: 10px 16px;
+			width: 100%;
+
+			&::placeholder {
+				color: $c-alto;
+				opacity: 100%;
+			}
+		}
+
+		// .banner-form__form__input
+		@include child('input') {
+
+		}
+
+		// .banner-form__form__name
+		@include child('name') {
+
+		}
+
+		// .banner-form__form__email
+		@include child('email') {
+
+		}
+
+		// .banner-form__form__message
+		@include child('message') {
+			height: 125px;
+		}
+
+		// .banner-form__form__button
+		@include child('button') {
+			margin-top: 35px;
+		}
+	}
+}

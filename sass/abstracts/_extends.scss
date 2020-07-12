@@ -68,6 +68,9 @@
 @include extend('bg-grey') {
 	background-color: $c-alabaster;
 }
+@include extend('bg-dark-grey') {
+	background-color: $c-cod-gray;
+}
 
 // Typography
 @include extend('typography') {
