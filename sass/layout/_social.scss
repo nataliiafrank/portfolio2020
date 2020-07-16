@@ -11,11 +11,21 @@
 
 	// .social__link
 	@include element('link') {
+		transition: $transition ease;
+
+		@include mq('lg') {
+			&:hover {
+				.social__icon {
+					transform: scale(1.2);
+				}
+			}
+		}
 	}
 
 	// .social__icon
 	@include element('icon') {
 		height: 20px;
 		width: 20px;
+		transition: $transition ease;
 	}
 }

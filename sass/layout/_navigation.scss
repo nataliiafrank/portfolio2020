@@ -13,8 +13,32 @@
 
 	// .nav__link
 	@include element('link') {
-		&.link {
-			font-style: normal;
+		position: relative;
+
+		&::before {
+			@include mq('lg') {
+				@include pseudo;
+				left: 50%;
+				bottom: -3px;
+				width: 60%;
+				height: 1px;
+				opacity: 0;
+				background-color: $c-cod-gray;
+				-webkit-transform: translate(-50%);
+				transform: translate(-50%);
+				-webkit-transition: all $transition ease-in-out;
+				transition: all $transition ease-in-out;
+			}
 		}
+
+		&:hover {
+			&::before {
+				@include mq('lg') {
+					width: 100%;
+					opacity: 1;
+				}
+			}
+		}
+
 	}
 }

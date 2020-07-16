@@ -56,25 +56,19 @@
 		}
 
 		@include mq('lg') {
-			transition: hover $transition ease-in-out;
-
-			&:hover {
-				color: $c-white;
-			}
+			// transition: hover $transition ease-in-out;
 		}
 
-		&::before {
-			@include pseudo;
-			background-color: $c-cod-gray;
-			bottom: 0;
-			height: 1px;
-			left: 0;
-			margin-bottom: 2px;
-			width: 100%;
+		&.link {
+			font-style: normal;
 
+			&::after {
 			@include mq('md') {
 				height: 3px;
 			}
+		}
+
+
 		}
 	}
 

@@ -1,21 +1,62 @@
 .button {
-	background-color: $c-cod-gray;
+	background: -webkit-gradient(linear,left top,right top,from($c-cod-gray),color-stop(50%,$c-white),color-stop(50%,transparent)) 100% 0/200% 200% $c-cod-gray;
+	background: linear-gradient(90deg,$c-cod-gray 0,$c-white 50%,transparent 0) 100% 0/200% 200% $c-cod-gray;
 	color: $c-white;
 	min-height: 40px;
 	min-width: 218px;
 	padding: 10px 0;
+	overflow: hidden;
+	transition: $transition ease;
+	position: relative;
+	background-position: 100% 0;
+
+	&:hover {
+		@include mq('lg') {
+			background-position: 0 0;
+		}
+	}
+
+	&:focus,
+	&:active {
+		@include mq('lg') {
+			background-position: -100% 0;
+			background-color: $c-white;
+			color: $c-cod-gray;
+		}
+	}
 }
 
 .link {
+	color: transparent;
 	font-style: italic;
-	text-decoration: underline;
+	display: inline-flex;
+	background: -webkit-gradient(linear,left top,right top,from($c-tundora),color-stop(50%,$c-gray),color-stop(50%,transparent)) 100% 0/200% 200% $c-cod-gray;
+	background: linear-gradient(90deg,$c-tundora 0,$c-gray 50%,transparent 0) 100% 0/200% 200% $c-cod-gray;
+	-webkit-background-clip: text;
+	background-clip: text;
+	overflow: hidden;
 	transition: $transition ease;
+	position: relative;
 
 	&:hover {
 		@include mq('md') {
-			color: $c-black;
+			background-position: 0 0;
+		}
+
+		&::after {
+			transform: translateX(-101%);
 		}
 	}
+
+	&::after {
+		@include pseudo;
+		background-color: $c-cod-gray;
+		bottom: 0;
+		height: 1px;
+		transition: $transition ease;
+		width: 100%;
+	}
+
 }
 
 .close {
