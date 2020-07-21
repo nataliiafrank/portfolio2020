@@ -34,12 +34,10 @@ const domSelectors = {
 
 const toggleMenu = () => {
 	const button = domSelectors.toggleMenuButton;
-
 	button.classList.toggle(state.open);
 
 	domSelectors.headerNav.classList.toggle(state.open);
 	document.body.classList.toggle('overflow-hidden');
-	//domSelectors.headerNav.classList.toggle(state.closed);
 
 	if(button.classList.contains(state.open)) {
 		domSelectors.headerNav.classList.remove(state.closed);
@@ -51,16 +49,9 @@ const toggleMenu = () => {
 const closeMenu = () => {
 	if (domSelectors.headerNav.classList.contains(state.open)) {
 		document.body.classList.remove('overflow-hidden');
-		domSelectors.toggleMenuButton.classList.remove(state.open);
 		domSelectors.headerNav.classList.remove(state.open);
-		
-		return true;
+		domSelectors.toggleMenuButton.classList.remove(state.open);
 	}
-
-	return false;
-
-	// domSelectors.headerNav.classList.replace(state.open, state.closed);
-	// domSelectors.headerNav.classList.add(state.closed);
 }
 
 const openPopup = (item) => {
@@ -133,9 +124,10 @@ const handlePopup = (event) => {
 	}
 }
 
-const jumpTo = (e) => {
+const scrallTo = (e) => {
 	e.preventDefault();
 	const href = e.target.getAttribute("href");
+	const target = e.target;
 
 	function scrall() {
 		document.querySelector(href).scrollIntoView({ 
@@ -143,11 +135,10 @@ const jumpTo = (e) => {
 		});
 	}
 
-	// if(window.innerWidth < bp.tablet && e.target.closest('.js-header-nav').classList.contains('header__menu')) {
-	if(window.innerWidth < bp.tablet) {
+	if(window.innerWidth < bp.tablet && !target.closest('.js-footer-nav')) {
 		toggleMenu()
-	
-		setTimeout(function(){ scrall(); }, 400);
+
+		setTimeout(function(){ scrall(); }, 250);
 	} else {
 		scrall();
 	}
@@ -190,5 +181,5 @@ domSelectors.popupContainer.addEventListener('mouseleave', (e) => {
 });
 
 domSelectors.scrallToLinks.forEach(function(item) {
-	item.addEventListener('click', (e) => { jumpTo(e) });
+	item.addEventListener('click', (e) => { scrallTo(e) });
 });
