@@ -29,7 +29,7 @@
 .link {
 	color: transparent;
 	font-style: italic;
-	display: inline-flex;
+	display: inline-block;
 	background: -webkit-gradient(linear,left top,right top,from($c-tundora),color-stop(50%,$c-gray),color-stop(50%,transparent)) 100% 0/200% 200% $c-cod-gray;
 	background: linear-gradient(90deg,$c-tundora 0,$c-gray 50%,transparent 0) 100% 0/200% 200% $c-cod-gray;
 	-webkit-background-clip: text;
@@ -37,6 +37,7 @@
 	overflow: hidden;
 	transition: $transition ease;
 	position: relative;
+	vertical-align: bottom;
 
 	&:hover {
 		@include mq('md') {

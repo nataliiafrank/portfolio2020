@@ -29,7 +29,7 @@ const domSelectors = {
 	popupLink: document.querySelectorAll('.js-popup-link'),
 	popupClose: document.querySelectorAll('.js-popup-close'),
 	popupContainer: document.querySelector('.js-popup-container'),
-	scrallToLinks: document.querySelectorAll('.js-scrall-to')
+	scrollToLinks: document.querySelectorAll('.js-scroll-to')
 }
 
 const toggleMenu = () => {
@@ -124,12 +124,12 @@ const handlePopup = (event) => {
 	}
 }
 
-const scrallTo = (e) => {
+const scrollTo = (e) => {
 	e.preventDefault();
 	const href = e.target.getAttribute("href");
 	const target = e.target;
 
-	function scrall() {
+	function scroll() {
 		document.querySelector(href).scrollIntoView({ 
 			behavior: 'smooth'
 		});
@@ -138,9 +138,9 @@ const scrallTo = (e) => {
 	if(window.innerWidth < bp.tablet && !target.closest('.js-footer-nav')) {
 		toggleMenu()
 
-		setTimeout(function(){ scrall(); }, 250);
+		setTimeout(function(){ scroll(); }, 250);
 	} else {
-		scrall();
+		scroll();
 	}
 }
 
@@ -180,6 +180,6 @@ domSelectors.popupContainer.addEventListener('mouseleave', (e) => {
 	closePopup();
 });
 
-domSelectors.scrallToLinks.forEach(function(item) {
-	item.addEventListener('click', (e) => { scrallTo(e) });
+domSelectors.scrollToLinks.forEach(function(item) {
+	item.addEventListener('click', (e) => { scrollTo(e) });
 });
