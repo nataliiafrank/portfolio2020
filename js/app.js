@@ -1,4 +1,9 @@
 import {projects} from './data';
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 // Defining global veriables
 const bp = {
@@ -130,13 +135,15 @@ const scrollTo = (e) => {
 	const target = e.target;
 
 	function scroll() {
-		document.querySelector(href).scrollIntoView({ 
-			behavior: 'smooth'
-		});
+		// document.querySelector(href).scrollIntoView({ 
+		// 	behavior: 'smooth'
+		// });
+
+		gsap.to(window, 0.8, {scrollTo:{y: href}});
 	}
 
 	if(window.innerWidth < bp.tablet && !target.closest('.js-footer-nav')) {
-		toggleMenu()
+		toggleMenu();
 
 		setTimeout(function(){ scroll(); }, 250);
 	} else {
