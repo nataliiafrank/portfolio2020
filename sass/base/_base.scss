@@ -13,6 +13,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 html{
 	// Define size of 1 rem
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body{
@@ -46,6 +47,10 @@ body{
 
 .is-hidden {
 	display: none;
+}
+
+.overflow-hidden {
+	overflow: hidden;
 }
 
 // Normilise
@@ -103,7 +108,6 @@ a,button,[role='button'] {
 	outline-offset: 1px;
 
 	// accesibility
-	&:focus,
 	&:active {
 		outline: 1px dashed $c-cod-gray;
 	}

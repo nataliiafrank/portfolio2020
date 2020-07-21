@@ -104,12 +104,22 @@
 		top: 0;
 		width: 100%;
 		z-index: 2;
-		display: none;
+		border: 1px solid $c-cod-gray;
+		transform: translate(-100%, -100%);
+
+		@include mq('md') {
+			visibility: hidden;
+		}
 
 		//.header__menu.is-open
 		@include state('open') {
-			animation: fadeIn $transition * 2 ease-in-out;
-			display: block;
+			animation: slideFromLeftCorner $transition * 2 ease-in-out;
+			transform: translate(0, 0);
+			overflow: scroll;
+		}
+
+		@include state('closed') {
+			animation: slideToLeftCorner $transition * 2 ease-in-out;
 		}
 
 		.nav__items {
@@ -117,6 +127,8 @@
 			display: flex;
 			flex-flow: column nowrap;
 			height: 100%;
+			min-height: 660px;
+			padding-bottom: 115px;
 			padding-top: 55px;
 		}
 

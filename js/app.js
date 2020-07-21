@@ -29,13 +29,38 @@ const domSelectors = {
 	popupLink: document.querySelectorAll('.js-popup-link'),
 	popupClose: document.querySelectorAll('.js-popup-close'),
 	popupContainer: document.querySelector('.js-popup-container'),
+	scrallToLinks: document.querySelectorAll('.js-scrall-to')
 }
 
-const toggleMenu = (event) => {
-	const button = event.target;
+const toggleMenu = () => {
+	const button = domSelectors.toggleMenuButton;
+
 	button.classList.toggle(state.open);
 
 	domSelectors.headerNav.classList.toggle(state.open);
+	document.body.classList.toggle('overflow-hidden');
+	//domSelectors.headerNav.classList.toggle(state.closed);
+
+	if(button.classList.contains(state.open)) {
+		domSelectors.headerNav.classList.remove(state.closed);
+	} else {
+		domSelectors.headerNav.classList.add(state.closed);
+	}
+}
+
+const closeMenu = () => {
+	if (domSelectors.headerNav.classList.contains(state.open)) {
+		document.body.classList.remove('overflow-hidden');
+		domSelectors.toggleMenuButton.classList.remove(state.open);
+		domSelectors.headerNav.classList.remove(state.open);
+		
+		return true;
+	}
+
+	return false;
+
+	// domSelectors.headerNav.classList.replace(state.open, state.closed);
+	// domSelectors.headerNav.classList.add(state.closed);
 }
 
 const openPopup = (item) => {
@@ -108,8 +133,29 @@ const handlePopup = (event) => {
 	}
 }
 
+const jumpTo = (e) => {
+	e.preventDefault();
+	const href = e.target.getAttribute("href");
+
+	function scrall() {
+		document.querySelector(href).scrollIntoView({ 
+			behavior: 'smooth'
+		});
+	}
+
+	// if(window.innerWidth < bp.tablet && e.target.closest('.js-header-nav').classList.contains('header__menu')) {
+	if(window.innerWidth < bp.tablet) {
+		toggleMenu()
+	
+		setTimeout(function(){ scrall(); }, 400);
+	} else {
+		scrall();
+	}
+}
+
 // Event Listenres
 domSelectors.toggleMenuButton.addEventListener('click', toggleMenu);
+window.addEventListener('resize', closeMenu);
 
 domSelectors.popupLink.forEach(function(item) {
 	item.addEventListener('click', (e) => {
@@ -141,4 +187,8 @@ domSelectors.popupContainer.addEventListener('mouseleave', (e) => {
 		return;
 	}
 	closePopup();
+});
+
+domSelectors.scrallToLinks.forEach(function(item) {
+	item.addEventListener('click', (e) => { jumpTo(e) });
 });
