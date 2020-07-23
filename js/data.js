@@ -40,4 +40,6 @@ const projects = {
 	},
 }
 
-export {projects};
+const skills = ['html', 'css', 'javascript', 'sass', 'canvas', 'three.js', 'git', 'node.js', 'jquery', 'npm'];
+
+export {projects, skills};

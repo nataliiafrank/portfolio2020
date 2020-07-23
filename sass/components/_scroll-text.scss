@@ -27,14 +27,13 @@
 		}
 	}
 
-	// .scroll-text__row
-	@include element('row') {
+	// .scroll-text__rows
+	@include element('rows') {
 		width: 5000px;
 	}
 
-	// .scroll-text__text
-	@include element('text') {
+	// .scroll-text__row
+	@include element('row') {
 		@extend %typography--heading-2;
-
 	}
 }
