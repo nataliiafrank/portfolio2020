@@ -88,17 +88,31 @@
 
 		// .blog-list__item__title
 		@include child('title') {
-			@extend %typography--heading-4;
+			@extend %typography--heading-6;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
 		}
 
 		// .blog-list__item__text
 		@include child('text') {
-			padding-top: 20px;
+			margin-top: 20px;
+			display: -webkit-box;
+			-webkit-line-clamp: 5;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
 		}
 		// .blog-list__item__link
 		@include child('link') {
 			display: inline-block;
 			margin-top: 50px;
 		}
+	}
+
+	// .blog-list__link-container
+	@include element('link-container') {
+		margin-top: 26px;
+		text-align: right;
 	}
 }
