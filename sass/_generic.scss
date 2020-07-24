@@ -28,6 +28,7 @@
 
 .link {
 	color: transparent;
+	cursor: pointer;
 	font-style: italic;
 	display: inline-block;
 	background: -webkit-gradient(linear,left top,right top,from($c-tundora),color-stop(50%,$c-gray),color-stop(50%,transparent)) 100% 0/200% 200% $c-cod-gray;
@@ -85,5 +86,16 @@
 	&:after {
 		bottom: 6px;
 		transform: rotate(20deg);
+	}
+
+	&:focus {
+		&:before {
+			transform: rotate(0deg);
+			transition: transform ($transition/3) ease ($transition/3);
+		}
+		&:after {
+			transform: rotate(-0deg);
+			transition: transform ($transition/3) ease ($transition/3);
+		}
 	}
 }

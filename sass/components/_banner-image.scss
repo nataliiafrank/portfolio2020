@@ -22,22 +22,24 @@
 
 	// .banner-image__left
 	@include element('left') {
+		padding-bottom: 72px;
+
 		@include mq('md') {
 			flex: 0 0 50%;
+			padding-bottom: 0;
+		}
+
+		@include mq('lg') {
+			padding-bottom: 75px;
 		}
 	}
 
 	// .banner-image__right
 	@include element('right') {
-		padding-top: 72px;
+		position: relative;
 
 		@include mq('md') {
-			padding-top: 0;
 			flex: 0 0 50%;
-		}
-
-		@include mq('lg') {
-			padding-top: 75px;
 		}
 	}
 
@@ -64,11 +66,6 @@
 		min-height: 100%;
 	}
 
-	// .banner-image__right
-	@include element('right') {
-		position: relative;
-	}
-
 	// .banner-image__text
 	@include element('text') {
 		padding-top: 30px;
@@ -84,6 +81,29 @@
 		p:not(:first-of-type) {
 			padding-top: 18px;
 		}
+
+		// .banner-image__text__image-wrap
+		@include child('image-wrap') {
+			@extend .u-image-wrap;
+			@include responsive-img(288, 383);
+			width: 288px;
+
+			img {
+				@extend .u-image;
+				opacity: 0.85;
+			}
+		}
+
+		// .banner-image__text__close
+		@include child('close') {
+			margin-bottom: 10px;
+
+			@include mq('lg') {
+				&.close {
+					display: none;
+				}
+			}
+		}
 	}
 
 	// .banner-image__text-image
@@ -91,5 +111,12 @@
 		position: absolute;
 		visibility: hidden;
 		opacity: 0;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include mq('lg') {
+			z-index: -1;
+		}
 	}
 }

@@ -1,52 +1,35 @@
 import { gsap } from 'gsap';
 import { bp } from './utilities';
 
-const popupSelector = document.querySelector('.js-popup');
-const linksSelector = document.querySelectorAll('.js-popup-link');
-const closeButtonsSelector = document.querySelectorAll('.js-popup-close');
-const popupContainer = document.querySelector('.js-popup-container');
+export const popups = document.querySelectorAll('.js-popup');
 
-const openPopup = (link) => {
+const linksSelector = (popup) => popup.querySelectorAll('.js-popup-link');
+const closeButtonsSelector = (popup) => popup.querySelectorAll('.js-popup-close');
+const popupContainer = (popup) => popup.closest('.js-popup-container');
+
+const openPopup = (popup, link) => {
 	const id = link.getAttribute('data-project-id');
 	const itemSelector = document.querySelector(id);
-	const containerDataId = popupSelector.getAttribute('data-open-project-id');
+	const containerDataId = popup.getAttribute('data-open-project-id');
 
 	if(containerDataId === id) {
 		return;
 	}
 
 	if (containerDataId !== '') {
-		closePopup(containerDataId);
+		closePopup(popup);
 	}
 
 	itemSelector.classList.add('is-open');
-	popupSelector.setAttribute('data-open-project-id', id)
+	popup.setAttribute('data-open-project-id', id)
 	
 	gsap.to(id, {
 		autoAlpha: 1,
-		scrollTo:{
-			y: id // doesn't work
-		}
 	});
-
-	// gsap.to( id, {
-	// 	opacity: 1,
-	// 	duration: 1,
-	// 	delay: 0.25,
-	// 	visibility: 'visible',
-	// 	immediateRender:false,
-	// 	ease: 'power3',
-	// 	scrollTo:{
-	// 		y: id // doesn't work
-	// 	}
-	// });
 }
 
-const closePopup = (popupId) => {
-	// Look for id if not provided
-	const openId = popupId || popupSelector.getAttribute('data-open-project-id');
-
-	console.log('close popup', openId, popupSelector);
+const closePopup = (popup) => {
+	const openId = popup.getAttribute('data-open-project-id');
 
 	if (!openId) {
 		// Nothing to close
@@ -55,68 +38,53 @@ const closePopup = (popupId) => {
 
 	gsap.to(openId, {autoAlpha: 0,});
 
-	// gsap.to(openId, {
-	// 	opacity: 0,
-	// 	duration: 1,
-	// 	visibility: 'hidden',
-	// 	immediateRender: false,
-	// 	ease: 'power3',
-	// });
-
 	document.querySelector(openId).classList.remove('is-open');
-	popupSelector.setAttribute('data-open-project-id', '');
+	popup.setAttribute('data-open-project-id', '');
 }
 
-export const initialize = () => {
-	// Event handlers
-	if(!popupSelector) {
-		return;
-	}
+export const initialize = (popup) => {
 
 	//// Click events for mobile/tablet view
 
 	// Open popup on link click
-	linksSelector.forEach((link) => {
+	linksSelector(popup).forEach((link) => {
 		link.addEventListener('click', (e) => { 
 			if(window.innerWidth >= bp.desktop) {
 				return;
 			}
-			openPopup(link);
+			openPopup(popup, link);
 		});
 	});
 
 	// Close popup on button click
-	closeButtonsSelector.forEach((button) => {
+	closeButtonsSelector(popup).forEach((button) => {
 		button.addEventListener('click', (e) => {
 			if(window.innerWidth >= bp.desktop) {
 				return;
 			}
 
-			closePopup();
+			closePopup(popup);
 		});
 	});
 
 	//// Mouse events for desktop view
 
-
 	let enterTimeout = 0;
 
-	linksSelector.forEach((link) => {
+	linksSelector(popup).forEach((link) => {
 		link.addEventListener('mouseover', (e) => {
 			if(window.innerWidth < bp.desktop) {
 				return;
 			}
 
-			console.log('enter timeout')
 			enterTimeout = setTimeout(() => {
-				console.log('execute stuff inside timeout', link);
-				openPopup(link);
+				openPopup(popup, link);
 			}, 150);
 		});
 	});
 
 	// to clear timer
-	linksSelector.forEach((link) => {
+	linksSelector(popup).forEach((link) => {
 		link.addEventListener('mouseleave', (e) => {
 			if(window.innerWidth < bp.desktop) {
 				return;
@@ -126,5 +94,11 @@ export const initialize = () => {
 		});
 	});
 
-	popupContainer.addEventListener('mouseleave', () => closePopup());
+	popupContainer(popup).addEventListener('mouseleave', () => {
+		if(window.innerWidth < bp.desktop) {
+			return;
+		}
+
+		closePopup(popup)
+	});
 }
