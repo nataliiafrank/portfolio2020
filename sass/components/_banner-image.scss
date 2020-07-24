@@ -66,6 +66,7 @@
 
 	// .banner-image__right
 	@include element('right') {
+		position: relative;
 	}
 
 	// .banner-image__text
@@ -83,5 +84,12 @@
 		p:not(:first-of-type) {
 			padding-top: 18px;
 		}
+	}
+
+	// .banner-image__text-image
+	@include element('text-image') {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
 	}
 }

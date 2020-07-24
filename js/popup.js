@@ -1,109 +1,130 @@
+import { gsap } from 'gsap';
+import { bp } from './utilities';
 
-// 	popup: document.querySelector('.js-popup'),
-// 	popupItem: document.querySelector('.js-popup-item'),
-// 	popupLink: document.querySelectorAll('.js-popup-link'),
-// 	popupClose: document.querySelectorAll('.js-popup-close'),
-// 	popupContainer: document.querySelector('.js-popup-container'),
+const popupSelector = document.querySelector('.js-popup');
+const linksSelector = document.querySelectorAll('.js-popup-link');
+const closeButtonsSelector = document.querySelectorAll('.js-popup-close');
+const popupContainer = document.querySelector('.js-popup-container');
 
-const openPopup = (item) => {
-	const container = domSelectors.popup;
-	container.style.display = 'block';
-	container.style.opacity = 1;
-	item.style.opacity = 1;
-	item.style.display = 'block';
-	item.classList.add(state.open);
-	item.classList.remove(state.closed);
-}
+const openPopup = (link) => {
+	const id = link.getAttribute('data-project-id');
+	const itemSelector = document.querySelector(id);
+	const containerDataId = popupSelector.getAttribute('data-open-project-id');
 
-const closePopup = () => {
-	const container = domSelectors.popup;
-	const item = domSelectors.popupItem;
-
-	item.classList.remove(state.open);
-	item.classList.add(state.closed);
-	item.style.opacity = 0;
-
-	window.setTimeout(function () {
-		container.style.display = 'none';
-	}, 260);
-}
-
-const populatePopup = (project) => {
-	const container = domSelectors.popup;
-	const item = domSelectors.popupItem;
-
-	// Get correct data to populate the popup
-	const projectData = projects[project];
-	container.setAttribute('current-project', project);
-
-	// Image
-	item.querySelector('.js-popup-image').setAttribute('src', projectData.img.src);
-	item.querySelector('.js-popup-image').setAttribute('alt', projectData.img.alt);
-
-	// Description
-	item.querySelector('.js-popup-description').innerHTML = `<p>${projectData.description}</p>`;
-
-	// Links
-	projectData.links.forEach((link) => {
-		item.querySelector('.js-popup-links').innerHTML = '';
-		item.querySelector('.js-popup-links').insertAdjacentHTML('beforeend', `<a href=${link.href}>${link.title}</a>`);
-	});
-}
-
-const handlePopup = (event) => {
-	const container = domSelectors.popup;
-	const item = domSelectors.popupItem;
-
-	const currentLink = event.target;
-	const project = currentLink.getAttribute('data-project');
-
-	if (container.offsetHeight !== 0 && container.getAttribute('current-project') === project) {
-		// Current project is already visible - do nothing
+	if(containerDataId === id) {
 		return;
 	}
 
-	if(container.offsetHeight !== 0 && item.offsetHeight !== 0) {
-		closePopup();
-
-		window.setTimeout(function () {
-			populatePopup(project);
-			openPopup(item);
-		}, 350);
-	} else if (container.offsetHeight === 0) {
-		populatePopup(project);
-		openPopup(item);
+	if (containerDataId !== '') {
+		closePopup(containerDataId);
 	}
+
+	itemSelector.classList.add('is-open');
+	popupSelector.setAttribute('data-open-project-id', id)
+	
+	gsap.to(id, {
+		autoAlpha: 1,
+		scrollTo:{
+			y: id // doesn't work
+		}
+	});
+
+	// gsap.to( id, {
+	// 	opacity: 1,
+	// 	duration: 1,
+	// 	delay: 0.25,
+	// 	visibility: 'visible',
+	// 	immediateRender:false,
+	// 	ease: 'power3',
+	// 	scrollTo:{
+	// 		y: id // doesn't work
+	// 	}
+	// });
 }
 
+const closePopup = (popupId) => {
+	// Look for id if not provided
+	const openId = popupId || popupSelector.getAttribute('data-open-project-id');
 
-domSelectors.popupLink.forEach(function(item) {
-	item.addEventListener('click', (e) => {
-		if(window.innerWidth >= bp.desktop) {
-			console.log('desktop');
-			return;
-		}
-		handlePopup(e);
-	});
-});
+	console.log('close popup', openId, popupSelector);
 
-domSelectors.popupClose.forEach(function(item) {
-	item.addEventListener('click', () => closePopup());
-});
-
-domSelectors.popupLink.forEach(function(item) {
-	item.addEventListener('mouseover', (e) => {
-		if(window.innerWidth < bp.desktop) {
-			console.log('mobile/tablet');
-			return;
-		}
-		handlePopup(e);
-	});
-});
-
-domSelectors.popupContainer.addEventListener('mouseleave', (e) => {
-	if(window.innerWidth < bp.desktop) {
-		console.log('mobile/tablet');
+	if (!openId) {
+		// Nothing to close
 		return;
 	}
-	closePopup();
-});
+
+	gsap.to(openId, {autoAlpha: 0,});
+
+	// gsap.to(openId, {
+	// 	opacity: 0,
+	// 	duration: 1,
+	// 	visibility: 'hidden',
+	// 	immediateRender: false,
+	// 	ease: 'power3',
+	// });
+
+	document.querySelector(openId).classList.remove('is-open');
+	popupSelector.setAttribute('data-open-project-id', '');
+}
+
+export const initialize = () => {
+	// Event handlers
+	if(!popupSelector) {
+		return;
+	}
+
+	//// Click events for mobile/tablet view
+
+	// Open popup on link click
+	linksSelector.forEach((link) => {
+		link.addEventListener('click', (e) => { 
+			if(window.innerWidth >= bp.desktop) {
+				return;
+			}
+			openPopup(link);
+		});
+	});
+
+	// Close popup on button click
+	closeButtonsSelector.forEach((button) => {
+		button.addEventListener('click', (e) => {
+			if(window.innerWidth >= bp.desktop) {
+				return;
+			}
+
+			closePopup();
+		});
+	});
+
+	//// Mouse events for desktop view
+
+
+	let enterTimeout = 0;
+
+	linksSelector.forEach((link) => {
+		link.addEventListener('mouseover', (e) => {
+			if(window.innerWidth < bp.desktop) {
+				return;
+			}
+
+			console.log('enter timeout')
+			enterTimeout = setTimeout(() => {
+				console.log('execute stuff inside timeout', link);
+				openPopup(link);
+			}, 150);
+		});
+	});
+
+	// to clear timer
+	linksSelector.forEach((link) => {
+		link.addEventListener('mouseleave', (e) => {
+			if(window.innerWidth < bp.desktop) {
+				return;
+			}
+
+			clearTimeout(enterTimeout);
+		});
+	});
+
+	popupContainer.addEventListener('mouseleave', () => closePopup());
+}

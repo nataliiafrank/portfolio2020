@@ -84,7 +84,6 @@
 		left:0;
 		width: 100%;
 		z-index: 1;
-		display: none;
 
 		@include mq('md') {
 			padding: 120px 30px 176px;
@@ -103,25 +102,24 @@
 		// .banner-list__popup__item
 		@include child('item') {
 			background-color: $c-alabaster;
+			left: 0;
 			opacity: 0;
-			display: none;
+			position: absolute;
+			top: 0;
+			visibility: hidden;
+			width: 100%;
 			
-
+			// .banner-list__popup__item.is-open
 			@include state('open') {
-				animation: fadeIn 0.33s ease-in;
-			}
-
-			@include state('closed') {
-				animation: fadeOut 0.25s ease-in;
 			}
 		}
 
 		// .banner-list__popup__close
 		@include child('close') {
-			margin-bottom: 95px;
+			margin: 15px 0;
 
 			@include mq('md') {
-				margin-bottom: 40px;
+				margin: 20px 0;
 			}
 
 			&.close {

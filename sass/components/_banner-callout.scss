@@ -30,7 +30,7 @@
 		display: inline-block;
 		margin-top: 220px;
 		position: relative;
-		opacity: 0;
+		// opacity: 0;
 
 		@include mq('md', $type: "max"){
 			line-height: 42px;

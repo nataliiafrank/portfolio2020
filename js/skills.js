@@ -25,10 +25,10 @@ const populateSkills = () => {
 	skillsRows.forEach(function (row) {
 		let shuffeledSkillsArr = shuffleArray(array);
 
-		console.log(shuffeledSkillsArr);
+		// console.log(shuffeledSkillsArr);
 		const shuffeledSkills = shuffeledSkillsArr.join(" ");
 
-		console.log(shuffeledSkills);
+		// console.log(shuffeledSkills);
 		row.insertAdjacentText('afterbegin', shuffeledSkills);
 	});
 }
