@@ -24,10 +24,8 @@
 				height: 1px;
 				opacity: 0;
 				background-color: $c-cod-gray;
-				-webkit-transform: translate(-50%);
 				transform: translate(-50%);
-				-webkit-transition: all $transition ease-in-out;
-				transition: all $transition ease-in-out;
+				transition: all ($transition/1.2) ease-in-out;
 			}
 		}
 

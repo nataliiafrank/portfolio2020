@@ -112,7 +112,16 @@
 
 	// .blog-list__link-container
 	@include element('link-container') {
-		margin-top: 26px;
 		text-align: right;
+
+		.link {
+			padding: 10px;
+			border: 1px solid $c-cod-gray;
+			border-top: 0;
+
+			&:after {
+				display: none;
+			}
+		}
 	}
 }
