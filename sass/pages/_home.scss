@@ -1,13 +1,14 @@
 .intro {
 	@extend %padding-slim;
 	height: calc(100vh - 30px);
+	max-height: 760px;
 	min-height: 637px;
 	position: relative;
 	width: 100%;
 
-	// @include mq('md') {
-	// 	min-height: 994px;
-	// }
+	@include mq('md') {
+		max-height: 1024px;
+	}
 
 	@include mq('lg') {
 		min-height: 720px;

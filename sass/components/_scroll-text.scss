@@ -1,5 +1,6 @@
 // .scroll-text
 @include block('scroll-text') {
+	display: flex;
 
 	// .scroll-text__container
 	@include element('container') {
@@ -13,27 +14,29 @@
 	// .scroll-text__wrap
 	@include element('wrap') {
 		overflow: hidden;
-		padding-bottom: 260px;
+		padding-bottom: 200px;
 		padding-top: 200px;
 
 		@include mq('md') {
-			padding-bottom: 350px;
+			padding-bottom: 100px;
 			padding-top: 300px;
 		}
 
 		@include mq('lg') {
-			padding-bottom: 290px;
 			padding-top: 160px;
 		}
 	}
 
 	// .scroll-text__rows
 	@include element('rows') {
-		width: 5000px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
 	}
 
 	// .scroll-text__row
 	@include element('row') {
 		@extend %typography--heading-2;
+		flex: 0 0 auto;
 	}
 }

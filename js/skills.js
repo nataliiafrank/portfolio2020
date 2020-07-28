@@ -47,30 +47,39 @@ const asignDirection = () => {
 }
 
 const animateSkills = () => {
+	let offsetH = 1000;
+	let skillsHeight = document.querySelector('#skills').clientHeight;
+	console.log(skillsHeight);
+
 	// create gsap timeline
 	let tl = gsap.timeline({
 		scrollTrigger: {
 			trigger: '#skills',
 			pin: true,
-			start: 'top top',
-			end: '+=600',
-			scrub: 1,
+			pinSpacing: false,
+			start: 'top 50px',
+			end: `+=${offsetH}`,
+			scrub: true,
 			markers: true,
 		}
 	});
 
 	tl.addLabel('start')
-	.from('.js-direction-left', {
-		x: -400,
-	},)
 	.to('.js-direction-left', {
-		x: 400,
+		xPercent: 5,
 	},)
-	.from('.js-direction-right', {
-		x: 0
-	}, 'start')
 	.to('.js-direction-right', {
-		x: -800,
+		xPercent: -5,
+	}, 'start')
+	.to('#projects', {
+		scrollTrigger: {
+			trigger: '#projects',
+			pin: true,
+			// pinSpacing: false,
+			start: `${-skillsHeight} 50px`,
+			end: `+=${offsetH}`,
+			markers: true,
+		},
 	}, 'start');
 }
 
@@ -81,5 +90,7 @@ export const initialize = () => {
 
 	populateSkills();
 	asignDirection();
-	// animateSkills();
+	animateSkills();
+
+	window.addEventListener('resize', animateSkills);
 }
