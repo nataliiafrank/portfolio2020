@@ -346,12 +346,21 @@
 
 					<div class="banner-form__right">
 						<p class="banner-form__heading u-section-heading desktop"><span>Contact</span></p>
-						<form class="banner-form__form">
-							<input class="banner-form__form__name banner-form__form__input" type="text" placeholder="Name">
-							<input class="banner-form__form__email banner-form__form__input" type="email" placeholder="Email">
-							<textarea class="banner-form__form__message" name="message" placeholder="Message"></textarea>
-							<button class="banner-form__form__button button">Send</button>
-						</form>
+
+						<div class="banner-form__form-container">
+						<!-- <form class="banner-form__form js-form" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/YOUR_EMAIL_HERE" method="post"> -->
+							<form class="banner-form__form js-form">
+								<fieldset id="fs-frm-inputs">
+									<input class="banner-form__form__name banner-form__form__input" type="text" name="name" id="full-name" placeholder="Name" required>
+									<input class="banner-form__form__email banner-form__form__input" type="email" name="_replyto" placeholder="Email" required>
+									<textarea class="banner-form__form__message" name="message" id="message" placeholder="Message" required></textarea>
+									<!-- <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission"> -->
+								</fieldset>
+								<!-- <input class="banner-form__form__button button js-form-submit" type="submit" value="Send"> -->
+								<button class="banner-form__form__button button js-form-submit">Send</button>
+							</form>
+							<div class="banner-form__thanks js-form-thanks"></div>
+						</div>
 					</div>
 
 				</div>

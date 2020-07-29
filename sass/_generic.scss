@@ -19,9 +19,10 @@
 	&:focus,
 	&:active {
 		@include mq('lg') {
-			background-position: -100% 0;
-			background-color: $c-white;
-			color: $c-cod-gray;
+			// background-position: -100% 0;
+			// background-color: $c-white;
+			// color: $c-cod-gray;
+			border: 1px solid $c-cod-gray;
 		}
 	}
 }

@@ -66,11 +66,16 @@
 		}
 	}
 
+	// .banner-form__form-container
+	@include element('form-container') {
+		position: relative;
+	}
+
 	// .banner-form__form
 	@include element('form') {
 		font-style: italic;
 
-		input,
+		input:not([type='submit']),
 		textarea {
 			color: $c-cod-gray;
 			margin-top: 12px;
@@ -85,17 +90,14 @@
 
 		// .banner-form__form__input
 		@include child('input') {
-
 		}
 
 		// .banner-form__form__name
 		@include child('name') {
-
 		}
 
 		// .banner-form__form__email
 		@include child('email') {
-
 		}
 
 		// .banner-form__form__message
@@ -105,7 +107,32 @@
 
 		// .banner-form__form__button
 		@include child('button') {
+			color: $c-white;
+			cursor: pointer;
 			margin-top: 35px;
+			width: 218px;
+
+			&:focus,
+			&:active {
+				outline: transparent;
+			}
+		}
+	}
+
+	// .banner-form__thanks
+	@include element('thanks') {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		// .banner-form__thanks__title
+		@include child('title') {
+			@extend %typography--callout;
+		}
+
+		// .banner-form__thanks__copy
+		@include child('copy') {
+			padding-top: 16px;
 		}
 	}
 }
