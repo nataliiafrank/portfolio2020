@@ -49,7 +49,6 @@ const asignDirection = () => {
 const animateSkills = () => {
 	let offsetH = 1000;
 	let skillsHeight = document.querySelector('#skills').clientHeight;
-	console.log(skillsHeight);
 
 	// create gsap timeline
 	let tl = gsap.timeline({

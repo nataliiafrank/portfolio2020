@@ -75,8 +75,8 @@
 	@include element('form') {
 		font-style: italic;
 
-		input:not([type='submit']),
-		textarea {
+		.banner-form__form__input,
+		.banner-form__form__message {
 			color: $c-cod-gray;
 			margin-top: 12px;
 			padding: 10px 16px;
@@ -85,6 +85,10 @@
 			&::placeholder {
 				color: $c-alto;
 				opacity: 100%;
+			}
+
+			&.is-invalid {
+				outline: 2px solid rgba(#bf0a30, 0.75);
 			}
 		}
 
@@ -124,6 +128,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		visibility: hidden;
+		opacity: 0;
 
 		// .banner-form__thanks__title
 		@include child('title') {
