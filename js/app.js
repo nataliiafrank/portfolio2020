@@ -8,6 +8,7 @@ import { initialize as skillsInitialize } from './skills';
 import { initialize as popupInitialize, popups } from './popup';
 import { initialize as contactFormInitialize } from './contact-form';
 import { initialize as drawSVG } from './draw-svg';
+import { initialize as showCV } from './cv';
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -17,6 +18,7 @@ const app = () => {
 	skillsInitialize();
 	contactFormInitialize();
 	drawSVG();
+	showCV();
 
 	popups.forEach((popup) => popupInitialize(popup));
 }

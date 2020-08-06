@@ -4,23 +4,24 @@
 	// .banner-callout__container
 	@include element('container') {
 		@extend %padding-slim;
-		padding-bottom: 185px;
-
-		@include mq('md') {
-			padding-bottom: 380px;
-		}
-
-		@include mq('lg') {
-			padding-bottom: 420px;
-		}
 	}
 
 	// .banner-callout__wrap
 	@include element('wrap') {
+		align-items: center;
+		display: flex;
+		max-width: 300px;
+		min-height: 600px;
 		position: relative;
 
 		@include mq('md') {
-			text-align: center;
+			justify-content: center;
+			max-width: 100%;
+			min-height: 820px;
+		}
+
+		@include mq('lg') {
+			min-height: 760px;
 		}
 	}
 
@@ -28,22 +29,23 @@
 	@include element('title') {
 		@extend %typography--heading-3;
 		display: inline-block;
-		margin-top: 220px;
+		flex: 0 0 auto;
+		margin-top: -30px;
+		max-width: 300px;
 		position: relative;
-		// opacity: 0;
 
-		@include mq('md', $type: "max"){
+		@include mq('md', $type: "max") {
 			line-height: 42px;
 		}
 
 		@include mq('md') {
-			margin-top: 470px;
 			text-align: center;
+			margin-top: -54px;
 			max-width: 100%;
 		}
 
 		@include mq('lg') {
-			margin-top: 320px;
+
 		}
 	}
 
@@ -56,52 +58,14 @@
 			line-height: 32px;
 		}
 
-		@include mq('lg') {
-			// transition: hover $transition ease-in-out;
-		}
-
 		&.link {
 			font-style: normal;
 
 			&::after {
-			@include mq('md') {
-				height: 3px;
+				@include mq('md') {
+					height: 3px;
+				}
 			}
 		}
-
-
-		}
 	}
-
-	// // .banner-callout__arrow
-	// @include element('arrow') {
-	// 	height: 56px;
-  //   left: 0;
-  //   margin-top: 150px;
-  //   position: absolute;
-  //   top: 0;
-  //   transform: translateY(-50%) rotate(-90deg);
-  //   width: 65px;
-
-	// 	@include mq('md') {
-	// 	}
-	// }
-
-	// // .banner-callout__cv
-	// @include element('cv') {
-	// 	height: 178px;
-	// 	left: auto;
-	// 	margin-right: 17px;
-	// 	margin-top: -20px;
-	// 	position: absolute;
-	// 	right: 0;
-	// 	width: 148px;
-	// 	z-index: -1;
-
-	// 	@include mq('md') {
-	// 	}
-
-	// 	@include mq('lg') {
-	// 	}
-	// }
 }
