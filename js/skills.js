@@ -54,32 +54,34 @@ const animateSkills = () => {
 	let tl = gsap.timeline({
 		scrollTrigger: {
 			trigger: '#skills',
-			pin: true,
-			pinSpacing: false,
-			start: 'top 50px',
-			end: `+=${offsetH}`,
+			// pin: true,
+			// pinSpacing: false,
+			start: '-250px 250px',
+			end: `bottom 300px`,
 			scrub: true,
-			markers: true,
+			// markers: true,
 		}
 	});
 
 	tl.addLabel('start')
 	.to('.js-direction-left', {
-		xPercent: 5,
+		xPercent: 2,
+		ease: 'none',
 	},)
 	.to('.js-direction-right', {
-		xPercent: -5,
+		xPercent: -2,
+		ease: 'none',
 	}, 'start')
-	.to('#projects', {
-		scrollTrigger: {
-			trigger: '#projects',
-			pin: true,
-			// pinSpacing: false,
-			start: `${-skillsHeight} 50px`,
-			end: `+=${offsetH}`,
-			markers: true,
-		},
-	}, 'start');
+	// .to('#projects', {
+	// 	scrollTrigger: {
+	// 		trigger: '#projects',
+	// 		pin: true,
+	// 		// pinSpacing: false,
+	// 		start: `${-skillsHeight} 50px`,
+	// 		end: `+=${offsetH}`,
+	// 		// markers: true,
+	// 	},
+	// }, 'start');
 }
 
 export const initialize = () => {

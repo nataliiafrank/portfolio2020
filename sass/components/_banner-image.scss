@@ -28,10 +28,6 @@
 			flex: 0 0 50%;
 			padding-bottom: 0;
 		}
-
-		@include mq('lg') {
-			padding-bottom: 75px;
-		}
 	}
 
 	// .banner-image__right
@@ -45,17 +41,14 @@
 
 	// .banner-image__image-wrap
 	@include element('image-wrap') {
-		@include responsive-img(268, 285);
 		width: calc(210 / 268 * 100%);
 		margin: 0 auto;
 
 		@include mq('md') {
-			@include responsive-img(251, 341);
 			width: calc(210 / 268 * 100%);
 		}
 
 		@include mq('lg') {
-			@include responsive-img(570, 510);
 			width: calc(375 / 570 * 100%)
 		}
 	}
@@ -64,6 +57,11 @@
 	@include element('image') {
 		max-height: 100%;
 		min-height: 100%;
+
+		// .banner-image__image.is-drawn
+		@include state('drawn') {
+			animation: drawSVG 13s linear forwards;
+		}
 	}
 
 	// .banner-image__text
