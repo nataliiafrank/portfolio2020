@@ -9,10 +9,12 @@ import { initialize as popupInitialize, popups } from './popup';
 import { initialize as contactFormInitialize } from './contact-form';
 import { initialize as drawSVG } from './draw-svg';
 import { initialize as showCV } from './cv';
+import { initialize as sceneInit } from './intro';
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 const app = () => {
+	sceneInit();
 	menuInitialize();
 	scrollToInitialize();
 	skillsInitialize();

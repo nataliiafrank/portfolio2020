@@ -1,5 +1,4 @@
 .intro {
-	@extend %padding-slim;
 	height: calc(100vh - 30px);
 	max-height: 760px;
 	min-height: 637px;
@@ -7,6 +6,7 @@
 	width: 100%;
 
 	@include mq('md') {
+		height: 100vh;
 		max-height: 1024px;
 	}
 
@@ -16,20 +16,20 @@
 
 	&__menu {
 		display: none;
+		@extend %padding-slim;
 
 		@include mq('md') {
 			bottom: 0;
 			display: block;
 			height: auto;
-			padding-bottom: 80px;
+			padding-bottom: 45px;
 			position: absolute;
 			top: auto;
-			width: calc(100% - 70px);
+			width: 100%;
 		}
 
 		@include mq('xxl') {
 			max-width: 1440px;
-			padding-bottom: 45px;
 		}
 
 		.nav__items {
@@ -54,6 +54,7 @@
 
 	&__social {
 		bottom: 0;
+		height: 108px;
 		left: 0;
 		margin-bottom: 80px;
 		margin-left: 16px;
@@ -61,7 +62,7 @@
 
 		@include mq('md') {
 			bottom: 50%;
-			margin-bottom: 0;
+			margin-bottom: -40px;
 			margin-left: 35px;
 			transform: translate(0, -50%);
 		}
@@ -76,10 +77,6 @@
 		width: 100%;
 
 		@include mq('md') {
-			height: calc(100% - 113px);
-		}
-
-		@include mq('lg') {
 			height: calc(100% - 78px);
 		}
 	}
