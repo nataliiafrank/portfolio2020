@@ -70,4 +70,17 @@
 			margin-bottom: 18px;
 		}
 	}
+
+	&__scene {
+		height: 100%;
+		width: 100%;
+
+		@include mq('md') {
+			height: calc(100% - 113px);
+		}
+
+		@include mq('lg') {
+			height: calc(100% - 78px);
+		}
+	}
 }
