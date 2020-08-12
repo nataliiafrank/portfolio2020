@@ -11,7 +11,8 @@ void main() {
   vec3 p = vec3(position.x, position.y, position.z);
 
   p.x += (abs(sin(p.y * 0.025 + time) * 0.5 + 0.5) * 15.);
-  p.z += tan(time * 0.25) * 5.;
+  p.y += (abs(sin(p.x * 0.025 + time) * 0.5 + 0.5) * 2.);
+  //p.z += tan(time * 0.25) * 5.;
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
 }

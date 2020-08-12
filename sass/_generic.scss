@@ -2,11 +2,14 @@
 	background: -webkit-gradient(linear,left top,right top,from($c-cod-gray),color-stop(50%,$c-white),color-stop(50%,transparent)) 100% 0/200% 200% $c-cod-gray;
 	background: linear-gradient(90deg,$c-cod-gray 0,$c-white 50%,transparent 0) 100% 0/200% 200% $c-cod-gray;
 	color: $c-white;
+	display: inline-block;
+	font-style: italic;
 	min-height: 40px;
 	min-width: 218px;
 	padding: 10px 0;
 	overflow: hidden;
 	transition: $transition ease;
+	text-align: center;
 	position: relative;
 	background-position: 100% 0;
 

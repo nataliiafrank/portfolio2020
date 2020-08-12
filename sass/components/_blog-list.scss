@@ -124,4 +124,45 @@
 			}
 		}
 	}
+
+	// .blog-list__load
+	@include element('load') {
+		padding-top: 60px;
+		text-align: center;
+
+		// .blog-list__load__button
+		@include child('button') {
+
+		}
+	}
+
+	// .blog-list__message
+	@include element('message') {
+		text-align: center;
+
+		// .blog-list__message__text
+		@include child('text') {
+			font-style: italic;
+		}
+	}
+}
+
+/// MODIFIERS
+// .blog-list--blog
+@include block('blog-list') {
+	@include modifier('blog') {
+		.blog-list__container {
+			padding-bottom: 200px;
+		}
+
+		.blog-list__heading {
+			@include mq('lg') {
+				padding-left: calc(112 / 1370 * 100%);
+			}
+		}
+
+		.blog-list__items {
+			padding-top: 40px;
+		}
+	}
 }

@@ -67,7 +67,7 @@ function init(geometry, texture) {
 
 	// Create mesh of text
 	mesh = new THREE.Mesh(geometry, material);
-	mesh.position.set(-120, -30, 0); // Move according to text size
+	mesh.position.set(-150, -30, 0); // Move according to text size
 
 	if(window.innerWidth < bp.tablet) {
 		mesh.position.z = -300;
@@ -75,7 +75,7 @@ function init(geometry, texture) {
 		mesh.position.z = 0;
 	}
 
-	mesh.rotation.set(Math.PI, -Math.PI/7, 0); // Spin to face correctly
+	mesh.rotation.set(Math.PI, 0, 0); // Spin to face correctly
 	mesh.name = 'text-mesh';
 	scene.add(mesh);
 }
@@ -113,13 +113,11 @@ const onWindowResize = function() {
 	renderer.setSize( container.clientWidth, container.clientHeight );
 }
 
-// Event listeners
-window.addEventListener('resize', onWindowResize);
-
 export const initialize = () => {
-	// if(!skillsParent) {
-	// 	return;
-	// }
+	if(!sceneContainer) {
+		console.log(sceneContainer);
+		return;
+	}
 
 	loadFont(fontFile, (err, font) => {
 		// Create a geometry of packed bitmap glyphs
