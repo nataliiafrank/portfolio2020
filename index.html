@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="./sass/main.scss">
 </head>
 
-<body>
+<body class="home-page">
 	<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<defs>
 		<symbol id="icon-file-cv" viewBox="0 0 32 32">
@@ -89,7 +89,7 @@
 						<a class="nav__link js-scroll-to" href="#cv">CV</a>
 					</li>
 					<li class="nav__item">
-						<a class="nav__link js-scroll-to" href="#blog">Blog</a>
+						<a class="nav__link" href="/blog.html">Blog</a>
 					</li>
 					<li class="nav__item">
 						<a class="nav__link js-scroll-to" href="#contact">Contact</a>
@@ -145,7 +145,7 @@
 						<a class="nav__link js-scroll-to" href="#cv">CV</a>
 					</li>
 					<li class="nav__item">
-						<a class="nav__link js-scroll-to" href="#blog">Blog</a>
+						<a class="nav__link" href="/blog.html">Blog</a>
 					</li>
 					<li class="nav__item">
 						<a class="nav__link js-scroll-to" href="#contact">Contact</a>
@@ -225,7 +225,7 @@
 			<div class="banner-list">
 
 				<div class="banner-list__container container js-popup-container">
-					<p class="banner-list__heading u-section-heading"><span>Projects</span></p>
+					<p class="banner-list__heading u-section-heading"><span>Latest Projects</span></p>
 
 					<div class="banner-list__popup js-popup" data-open-project-id="">
 						<div class="banner-list__list">
@@ -338,7 +338,7 @@
 					</div>
 
 					<div class="blog-list__link-container">
-						<a class=" link" href="/">More articles</a>
+						<a class=" link" href="/blog.html">More articles</a>
 					</div>
 				</div>
 			</div>
@@ -397,7 +397,7 @@
 						<a class="nav__link js-scroll-to" href="#cv">CV</a>
 					</li>
 					<li class="nav__item">
-						<a class="nav__link js-scroll-to" href="#blog">Blog</a>
+						<a class="nav__link" href="/blog.html">Blog</a>
 					</li>
 					<li class="nav__item">
 						<a class="nav__link js-scroll-to" href="#contact">Contact</a>
@@ -429,10 +429,19 @@
 						</a>
 					</li>
 				</ul>
+			</div>
 
+			<div class="footer__copyright">
+				<p>All rights reserved. Nataliia Frank &copy; <span id="year"></span></p>
+				<!-- <p>This site is built with Hugo and hosted on Netlify. The source code is hosted on Github.</p> -->
+			</div>
 		</div>
+
 	</footer>
 
+	<script>
+		document.getElementById("year").innerHTML = new Date().getFullYear();
+	</script>
 	<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 	<script src="/js/index.js"></script>
 </body>

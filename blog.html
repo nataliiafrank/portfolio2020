@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="./sass/main.scss">
 </head>
 
-<body>
+<body class="blog-page">
 	<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<defs>
 		<symbol id="icon-arrow-left" viewBox="0 0 15 8">
@@ -52,7 +52,7 @@
 	<header class="blog-header">
 		<div class="blog-header__container container">
 			<div class="blog-header__title">
-				<a class="blog-header__logo" href="/">
+				<a class="blog-header__logo" href="/index.html">
 					<span class="blog-header__heading">Nataliia Frank</span>
 					<span class="blog-header__subheading">Ui Developer</span>
 				</a>
@@ -63,17 +63,42 @@
 					<svg class="blog-header__breadcrumbs__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<use xlink:href="#icon-arrow-left"/>
 					</svg>
-					<span class="blog-header__breadcrumbs__crumb" href="/index.html">Back</span>
+					<span class="blog-header__breadcrumbs__crumb">Back</span>
 				</a>
 			</div>
 		</div>
 	</header>
 
 	<main>
+		<section class="blog-intro">
+			<div class="blog-intro__container container">
+				<div class="blog-intro__wrap">
+					<div class="blog-intro__body">
+						<p class="blog-intro__heading u-section-heading"><span>my personal blog</span></p>
+						<p class="blog-intro__text">Here I write about my weeb development journey, what and how I learn, share resources and my thoughts.
+							Also I write on other presonal topics, like learning foring languages and creating art.
+							Sort the posts by category to see what's interesting to you.
+						</p>
+					</div>
+
+					<div class="blog-intro__sort">
+						<label class="blog-intro__sort__label" for="blog-category">Sort:</label>
+	
+						<select class="blog-intro__sort__select" name="blog-category" id="blog-category">
+							<option class="blog-intro__sort__option" value="" disabled selected>Category</option>
+							<option class="blog-intro__sort__option" value="all">All</option>
+							<option class="blog-intro__sort__option" value="dev">Web Development</option>
+							<option class="blog-intro__sort__option" value="lang">Learning Languages</option>
+							<option class="blog-intro__sort__option" value="art">Art</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="blog-items">
 			<div class="blog-list blog-list--blog">
 				<div class="blog-list__container container">
-					<p class="blog-list__heading u-section-heading"><span>my blog</span></p>
 
 					<div class="blog-list__items">
 
@@ -103,12 +128,15 @@
 
 					</div>
 
-					<div class="blog-list__load">
-						<a class="blog-list__load__button button" href="/">load more</a>
-					</div>
+					<div class="blog-list__cta-container">
+						<!-- display if more blog posts -->
+						<a class="blog-list__load-button button" href="#">load more</a>
 
-					<div class="blog-list__message">
-						<p class="blog-list__message__text">More blog posts coming soon.</p>
+						<!-- display if no more blog posts -->
+						<p class="blog-list__message">More blog posts coming soon</p>
+
+						<!-- display if no posts in the category -->
+						<p class="blog-list__message">This category posts are coming soon</p>
 					</div>
 				</div>
 			</div>
@@ -120,7 +148,7 @@
 		<div class="footer__container container">
 
 			<nav class="footer__nav nav">
-				<a class="nav__link js-scroll-to" href="/index.html">Portfolio</a>
+				<a class="nav__link" href="/index.html">Portfolio</a>
 			</nav>
 
 			<div class="footer__social social">
@@ -147,9 +175,18 @@
 						</a>
 					</li>
 				</ul>
+			</div>
 
+			<div class="footer__copyright">
+				<p>All rights reserved. Nataliia Frank &copy; <span id="year"></span></p>
+				<!-- <p>This site is built with Hugo and hosted on Netlify. The source code is hosted on Github.</p> -->
+			</div>
 		</div>
 	</footer>
+
+	<script>
+		document.getElementById("year").innerHTML = new Date().getFullYear();
+	</script>
 	<script src="/js/index.js"></script>
 </body>
 

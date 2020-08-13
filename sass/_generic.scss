@@ -28,6 +28,12 @@
 			border: 1px solid $c-cod-gray;
 		}
 	}
+
+	// .button.is-disabled
+	@include state('disabled') {
+		background-color: $c-alto;
+		pointer-events: none;
+	}
 }
 
 .link {
