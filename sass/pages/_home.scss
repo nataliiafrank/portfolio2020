@@ -37,7 +37,7 @@
 
 			@include mq('md') {
 				align-items: center;
-				border-top: 1px solid $c-cod-gray;
+				border-top: $border;
 				display: flex;
 				flex-flow: row nowrap;
 				justify-content: space-between;

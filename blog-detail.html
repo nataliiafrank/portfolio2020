@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="./sass/main.scss">
 </head>
 
-<body class="blog-page">
+<body class="blog-detail-page">
 	<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<defs>
 		<symbol id="icon-arrow-left" viewBox="0 0 15 8">
@@ -59,46 +59,87 @@
 			</div>
 
 			<div class="blog-header__breadcrumbs">
-				<a class="blog-header__breadcrumbs__link" href="/index.html">
+				<a class="blog-header__breadcrumbs__link" href="/blog.html">
 					<svg class="blog-header__breadcrumbs__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<use xlink:href="#icon-arrow-left"/>
 					</svg>
-					<span class="blog-header__breadcrumbs__crumb">Back</span>
+					<span class="blog-header__breadcrumbs__crumb">All blog posts</span>
 				</a>
 			</div>
 		</div>
 	</header>
 
 	<main>
-		<section class="blog-intro">
-			<div class="blog-intro__container container">
-				<div class="blog-intro__wrap">
-					<div class="blog-intro__body">
-						<p class="blog-intro__heading u-section-heading"><span>my personal blog</span></p>
-						<p class="blog-intro__text">Here I write about my weeb development journey, what and how I learn, share resources and my thoughts.
-							Also I write on other presonal topics, like learning foring languages and creating art.
-							Sort the posts by category to see what's interesting to you.
-						</p>
+		<section class="blog-detail-post">
+			<div class="blog-post">
+				<div class="blog-post__container container">
+					<div class="blog-post__header">
+						<div class="blog-post__header-image u-image-wrap">
+							<img class="blog-post__header-image__src u-image" src="https://dummyimage.com/1140x240/ccc/eee" alt="Blog heading image">
+						</div>
 					</div>
+		
+					<div class="blog-post__body">
+						<p class="blog-post__title">Blog title de Finibus Bonorum et Malorum</p>
+						<p class="blog-post__meta">
+							<span>August 20, 2020</span> /
+							<span>10 mins read</span>
+						</p>
 
-					<div class="blog-intro__sort">
-						<label class="blog-intro__sort__label" for="blog-category">Sort:</label>
-	
-						<select class="blog-intro__sort__select" name="blog-category" id="blog-category">
-							<option class="blog-intro__sort__option" value="" disabled selected>Category</option>
-							<option class="blog-intro__sort__option" value="all">All</option>
-							<option class="blog-intro__sort__option" value="dev">Web Development</option>
-							<option class="blog-intro__sort__option" value="lang">Learning Languages</option>
-							<option class="blog-intro__sort__option" value="art">Art</option>
-						</select>
+						<div class="blog-post__post">
+							<p>Nam libero tempore, cum soluta nobis est <a>eligendi optio cumque</a> nihil. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio</p>
+							<p>At vero eos et accusamus et iusto odio <strong>dignissimos ducimus</strong> qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis inline link style est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<p>Magna qui fugiat Lorem consectetur nulla dolore deserunt nisi aliquip incididunt. Duis anim ipsum ullamco dolor eiusmod sunt consectetur consectetur cillum dolore pariatur incididunt. Aliquip consequat ullamco ullamco officia id. Tempor elit mollit ipsum enim amet reprehenderit consectetur cupidatat ut magna qui ullamco ad. Voluptate voluptate officia fugiat fugiat laboris nisi adipisicing eiusmod aliqua dolore eiusmod ex.</p>
+
+							<blockquote>
+								“Irure sunt cupidatat exercitation ad ullamco non ullamco. Sunt laboris cillum exercitation excepteur sunt tempor incididunt aliqua duis.”
+							</blockquote>
+
+							<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+							<p>Fugiat commodo sunt commodo cupidatat magna proident ipsum velit sunt. Nisi do laborum ut magna nulla eiusmod consectetur mollit. Velit et excepteur et consectetur ipsum ullamco reprehenderit nulla. Et commodo sint voluptate nulla mollit aliquip officia. Sint adipisicing proident consectetur deserunt reprehenderit eu. Minim sint cupidatat et reprehenderit commodo esse aliqua labore. Eiusmod tempor sunt et magna nisi magna deserunt ex nulla magna amet.</p>
+
+							<h2>h2 to h6 subheading style will look like this </h2>
+
+							<p>Ea ex reprehenderit officia consectetur in culpa reprehenderit excepteur labore consequat aliquip:</p>
+
+							<ul>
+								<li>list item number one</li>
+								<li>Qui aute do exercitation esse reprehenderit dolore sit tempor laboris anim minim.</li>
+								<li>Veniam irure voluptate excepteur qui cillum id cillum do.</li>
+							</ul>
+
+							<ol>
+								<li>Veniam irure voluptate excepteur qui cillum id cillum do.</li>
+								<li>Ad aliquip exercitation anim amet minim ea consequat labore magna ex deserunt labore adipisicing.</li>
+								<li>third list item</li>
+							</ol>
+
+							<p>Officia quis adipisicing ut ullamco deserunt. Adipisicing aliqua ipsum ullamco non pariatur nisi commodo. Sunt ut Lorem excepteur aliquip magna.</p>
+
+							<pre>
+								<code>
+									const foo = 0;
+									alert(foo);
+									...
+								</code>
+							</pre>
+
+							<p>Enim veniam enim elit ad elit nisi tempor ex sint excepteur minim veniam. Enim excepteur do adipisicing exercitation nulla ea ullamco eiusmod tempor et ex occaecat. Velit ipsum proident sint enim adipisicing Lorem qui est magna nulla pariatur non. Est pariatur dolore mollit sit tempor. Quis reprehenderit non elit veniam ullamco labore tempor anim consequat cupidatat et. Cupidatat deserunt quis ad nostrud anim id in. Qui eiusmod dolore eu esse sit ut aliquip aliqua magna ea aliquip. Nisi et minim ea et. Non consectetur tempor eu nulla quis qui quis mollit aute pariatur amet. Aute excepteur reprehenderit ex anim sit aute ullamco est in quis excepteur consequat commodo.</p>
+
+							<img src="https://dummyimage.com/910x455/ccc/eee" alt="Blog image">
+
+							<p>Consectetur ad nostrud nisi esse proident aliquip nulla adipisicing duis adipisicing dolore fugiat proident in. Fugiat cupidatat Lorem consequat Lorem incididunt voluptate mollit enim amet cupidatat consectetur nostrud. Tempor voluptate nisi tempor fugiat nisi in. Tempor ullamco adipisicing et duis id aliqua sit in irure amet mollit velit quis incididunt. Pariatur minim consequat minim ullamco culpa non excepteur enim irure amet in exercitation.</p>
+							<p>Pariatur ea ullamco eiusmod tempor et aliquip duis veniam cillum eiusmod. Amet incididunt sit adipisicing elit. Id labore amet laboris magna velit cupidatat proident. Velit ex officia velit ex id aliquip deserunt fugiat nulla commodo id incididunt officia. Ut ex cillum amet in Lorem.</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="blog-items">
+		<section class="blog-detail-suggestion">
 			<div class="blog-list blog-list--blog">
 				<div class="blog-list__container container">
+					<p class="blog-list__heading u-section-heading"><span>You may also like</span></p>
 
 					<div class="blog-list__items">
 
@@ -113,30 +154,10 @@
 								<a href="/blog-detail.html" class="blog-list__item__link link">read more</a>
 							</div>
 						</div>
-
-						<div class="blog-list__item">
-							<div class="blog-list__item__image-wrap u-image-wrap">
-								<img class="blog-list__item__image u-image" src="https://dummyimage.com/558x240/ccc/eee" alt="blog-1">
-							</div>
-
-							<div class="blog-list__item__body">
-								<p class="blog-list__item__title">Blog title 2 goes here. This is a very long title, let's see what we are going to do about it.</p>
-								<p class="blog-list__item__text">Duis ad aute voluptate magna reprehenderit reprehenderit exercitation adipisicing Lorem velit aliquip. Lorem non exercitation enim sint ullamco fugiat mollit aliqua qui occaecat eu mollit esse tempor. Occaecat eiusmod nisi labore do sunt et excepteur duis proident quis amet. Aliqua est laborum culpa quis reprehenderit ipsum esse eiusmod et pariatur consectetur pariatur.</p>
-								<a href="/blog-detail.html" class="blog-list__item__link link">read more</a>
-							</div>
-						</div>
-
 					</div>
 
 					<div class="blog-list__cta-container">
-						<!-- display if more blog posts -->
-						<a class="blog-list__load-button button" href="#">load more</a>
-
-						<!-- display if no more blog posts -->
-						<p class="blog-list__message">More blog posts coming soon</p>
-
-						<!-- display if no posts in the category -->
-						<p class="blog-list__message">This category posts are coming soon</p>
+						<a class="blog-list__load-button button" href="/blog.html">all posts</a>
 					</div>
 				</div>
 			</div>

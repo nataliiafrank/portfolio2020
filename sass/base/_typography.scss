@@ -21,6 +21,10 @@ body {
 	@extend %typography--callout;
 }
 
+.typography--wysiwyg {
+	@extend %typography--wysiwyg;
+}
+
 .typography {
 	&--heading-1 {
 		@extend %typography--heading-1;

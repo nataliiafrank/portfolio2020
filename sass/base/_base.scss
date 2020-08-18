@@ -144,7 +144,7 @@ select {
 	max-width: 200px;
 	box-sizing: border-box;
 	margin: 0;
-	border: 1px solid $c-cod-gray;
+	border: $border;
 	box-shadow: none;
 	border-radius: 0;
 	-moz-appearance: none;

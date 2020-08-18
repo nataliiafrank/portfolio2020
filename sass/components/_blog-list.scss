@@ -13,7 +13,7 @@
 
 	// .blog-list__items
 	@include element('items') {
-		border-top: 1px solid $c-cod-gray;
+		border-top: $border;
 		margin-top: 80px;
 
 		@include mq('md') {
@@ -27,7 +27,7 @@
 
 	// .blog-list__item
 	@include element('item') {
-		border-bottom: 1px solid $c-cod-gray;
+		border-bottom: $border;
 		padding: 26px 0;
 
 		@include mq('md') {
@@ -45,7 +45,7 @@
 		// .blog-list__item__image-wrap
 		@include child('image-wrap') {
 			@include responsive-img(343, 148);
-			border: 1px solid $c-cod-gray;
+			border: $border;
 			width: 100%;
 
 			@include mq('md') {
@@ -113,7 +113,7 @@
 
 		.link {
 			padding: 10px;
-			border: 1px solid $c-cod-gray;
+			border: $border;
 			border-top: 0;
 
 			&:after {

@@ -1,12 +1,12 @@
 // .blog-intro
 @include block('blog-intro') {
 
-	// .blog-list__container
+	// .blog-intro__container
 	@include element('container') {
 		@extend %padding-slim;
 	}
 
-	// .blog-list__wrap
+	// .blog-intro__wrap
 	@include element('wrap') {
 		@include mq('lg') {
 			padding-left: calc(112 / 1370 * 100%);
@@ -14,7 +14,7 @@
 		}
 	}
 
-	// .blog-list__body
+	// .blog-intro__body
 	@include element('body') {
 		padding-bottom: 40px;
 
@@ -27,7 +27,7 @@
 		}
 	}
 
-	// .blog-list__text
+	// .blog-intro__text
 	@include element('text') {
 		padding-top: 25px;
 
@@ -40,18 +40,32 @@
 		}
 	}
 
-	// .blog-list__sort
+	// .blog-intro__sort
 	@include element('sort') {
 
 		@include mq('md') {
 			text-align: right;
 		}
 
-		// .blog-list__sort__label
+		// .blog-intro__sort__label
 		@include child('label') {
 			@extend %typography--eyebrow;
 			vertical-align: middle;
 			margin-right: 8px;
+		}
+	}
+}
+
+.blog-detail-page {
+	.blog-header {
+		&__container {
+			border-bottom: $border;
+			padding: 25px 0;
+			margin: 0 15px;
+
+			@include mq('md') {
+				margin: 0 35px;
+			}
 		}
 	}
 }

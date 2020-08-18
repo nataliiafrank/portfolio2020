@@ -68,6 +68,7 @@
 @include extend('bg-grey') {
 	background-color: $c-alabaster;
 }
+
 @include extend('bg-dark-grey') {
 	background-color: $c-cod-gray;
 }
@@ -80,6 +81,12 @@
 	@include modifier('body') {
 		font-size: 1.6rem;
 		line-height: 30px;
+	}
+
+	// %typography--body-sm
+	@include modifier('body-sm') {
+		font-size: 1.4rem;
+		line-height: 18px;
 	}
 
 	// %typography--body-lg
@@ -136,6 +143,7 @@
 			font-size: 6rem;
 			line-height: 80px;
 		}
+
 		@include mq('lg') {
 			font-size: 6.8rem;
 			line-height: 88px;
@@ -154,6 +162,7 @@
 			font-size: 4.8rem;
 			line-height: 52px;
 		}
+
 		@include mq('lg') {
 			font-size: 5.8rem;
 			line-height: 66px;
@@ -180,11 +189,13 @@
 		font-size: 2.2rem;
 		letter-spacing: 0.08em;
 		line-height: 30px;
+		text-transform: uppercase;
 
 		@include mq('md') {
 			font-size: 4rem;
 			line-height: 42px;
 		}
+
 		@include mq('lg') {
 			font-size: 5.8rem;
 			line-height: 60px;
@@ -203,5 +214,142 @@
 			font-size: 3.2rem;
 			line-height: 42px;
 		}
+	}
+
+	// %typography--wysiwyg
+	@include modifier('wysiwyg') {
+		p {
+			&:not(:last-child) {
+				margin-bottom: 25px;
+			}
+
+			strong {
+				background-color: $c-white;
+				font-weight: 700;
+				padding: 2px 3px;
+			}
+		}
+
+		a {
+			@extend .link;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			@extend %typography--heading-6;
+			margin: 40px 0 30px;
+
+			@include mq('md') {
+				margin: 60px 0 40px;
+			}
+		}
+
+		ul,
+		ol {
+			margin: 40px 0;
+
+			@include mq('md') {
+				padding-left: 30px;
+			}
+
+			li {
+				line-height: 28px;
+				padding-left: 20px;
+				position: relative;
+
+				&:not(:last-child) {
+					padding-bottom: 15px;
+
+					@include mq('md') {
+						padding-bottom: 25px;
+					}
+				}
+			}
+		}
+
+		ul {
+			list-style: none;
+
+			li {
+				padding-bottom: 10px;
+				padding-left: 30px;
+				position: relative;
+
+				&::before {
+					@include pseudo;
+					background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2218%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.47%204.234c-4.085%208.6%209%2014.333%2014.538%207.533%202.769-3.4%202.007-7.267-1.8-9.4-3.531-2-8.1-2.133-11.908-.933-.346.133-.761.333-.83.666-.07%202.534-.693%205%200%207.534.207.666%202.7%200%202.492-.667-.693-2.467-.07-5%200-7.533-.277.2-.554.466-.831.666C8.115.434%2017.185%203.9%2014.692%2010.034c-1.592%203.933-5.261%204.4-8.584%202.2-2.908-1.934-3.6-5.4-2.216-8.4.347-.534-2.077-.267-2.423.4z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E");
+					background-size: contain;
+					background-repeat: no-repeat;
+					height: 16px;
+					left: 0;
+					top: 6px;
+					width: 18px;
+				}
+			}
+		}
+
+		ol {
+			list-style: none;
+			counter-reset: ol-counter;
+
+			li {
+				padding-left: 30px;
+
+				&:before {
+					font-size: 18px;
+					font-family: $font-heading;
+					content: counter(ol-counter) ".";
+					counter-increment: ol-counter;
+					left: 0;
+					position: absolute;
+					top: 2px;
+					margin-left: 5px;
+				}
+			}
+		}
+
+		blockquote {
+			background-color: $c-white;
+			font-style: italic;
+			margin: 40px 0;
+			font-size: 2rem;
+			line-height: 32px;
+			padding: 25px 15px;
+
+			@include mq('md') {
+				padding: 25px;
+			}
+
+			@include mq('lg') {
+				font-size: 2.4rem;
+				margin: 65px 0;
+				padding: 25px 45px;
+			}
+		}
+
+		img {
+			display: block;
+			margin: 40px 0;
+			max-width: 100%;
+
+			@include mq('lg') {
+				margin: 60px 0;
+			}
+		}
+
+		pre {
+			background-color: $c-white;
+			// color: white;
+			padding: 20px;
+			margin: 40px 0;
+			white-space: pre-wrap;
+			white-space: -moz-pre-wrap;
+			white-space: -o-pre-wrap;
+			word-wrap: break-word;
+			counter-reset: line;
+
+			@include mq('lg') {
+				margin: 60px 0 40px;
+			}
+		};
 	}
 }
