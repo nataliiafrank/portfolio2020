@@ -32,7 +32,7 @@
 		@include mq('lg') {
 			flex: 0 0 auto;
 			padding-right: calc(200 / 1140 * 100%);
-			padding-top: 50px;
+			padding-top: 40px;
 			width: calc(100% - 440px);
 		}
 	}
@@ -52,7 +52,7 @@
 	@include element('heading') {
 		@include mq('lg') {
 			margin-top: 0;
-			margin-bottom: 35px;
+			margin-bottom: 15px;
 		}
 	}
 

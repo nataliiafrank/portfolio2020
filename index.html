@@ -178,18 +178,18 @@
 								<p>When I’m not coding <span class="link js-popup-link" data-project-id="#second-link">Link-2</span> I love spend time outside, play with my cat, drawing, sawing, crafting and potting plants.</p>
 							</div>
 	
-							<div class="banner-image__text-images">
-								<div id="first-link" class="banner-image__text-image js-popup-item">
+							<div class="banner-image__text__images">
+								<div id="first-link" class="banner-image__text__image-popup js-popup-item">
 									<button class="banner-image__text__close close js-popup-close"></button>
 									<div class="banner-image__text__image-wrap">
-										<img src="https://d2ph5fj80uercy.cloudfront.net/04/cat1489.jpg" alt="test">
+										<img class="banner-image__text__image" src="https://d2ph5fj80uercy.cloudfront.net/04/cat1489.jpg" alt="test">
 									</div>
 								</div>
 	
-								<div id="second-link" class="banner-image__text-image js-popup-item">
+								<div id="second-link" class="banner-image__text__image-popup js-popup-item">
 									<button class="banner-image__text__close close js-popup-close"></button>
 									<div class="banner-image__text__image-wrap">
-										<img src="https://d2ph5fj80uercy.cloudfront.net/05/cat4717.jpg" alt="test2">
+										<img class="banner-image__text__image" src="https://d2ph5fj80uercy.cloudfront.net/05/cat4717.jpg" alt="test2">
 									</div>
 								</div>
 
@@ -376,7 +376,7 @@
 		</section>
 	</main>
 
-	<footer class="footer u-bg-dark-grey">
+	<footer class="footer">
 		<div class="footer__container container">
 
 			<nav class="footer__nav nav js-footer-nav">
@@ -430,18 +430,9 @@
 					</li>
 				</ul>
 			</div>
-
-			<div class="footer__copyright">
-				<p>All rights reserved. Nataliia Frank &copy; <span id="year"></span></p>
-				<!-- <p>This site is built with Hugo and hosted on Netlify. The source code is hosted on Github.</p> -->
-			</div>
 		</div>
-
 	</footer>
 
-	<script>
-		document.getElementById("year").innerHTML = new Date().getFullYear();
-	</script>
 	<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 	<script src="/js/index.js"></script>
 </body>

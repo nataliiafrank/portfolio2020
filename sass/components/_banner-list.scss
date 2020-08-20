@@ -56,7 +56,6 @@
 			@extend %typography--heading-5;
 			cursor: pointer;
 			position: relative;
-			// white-space: nowrap;
 			transition: $transition ease;
 	
 			&::before {
@@ -76,7 +75,9 @@
 
 			&:hover {
 				&::before {
-					transform: translateX(-100%);
+					@include mq('lg') {
+						transform: translateX(-100%);
+					}
 				}
 			}
 		}

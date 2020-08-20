@@ -1,12 +1,13 @@
 import { gsap } from "gsap";
 
 const cv = document.querySelector('.js-revele-cv');
+const offset = 100;
 
 const showCV = () => {
 	let tl = gsap.timeline({
 		scrollTrigger: {
 			trigger:'#cv',
-			start: '-100px top',
+			start: `top ${offset}`,
 		}
 	});
 

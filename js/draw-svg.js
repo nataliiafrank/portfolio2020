@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 
 const svgSelector = document.querySelectorAll('.js-draw');
+const offset = '200'
 
 const draw = () => {
 	const svgs = [...svgSelector];
@@ -12,7 +13,7 @@ const draw = () => {
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: item.closest('section'),
-				start: 'top top',
+				start: `top ${offset}`,
 				toggleActions: 'play pause resume restart',
 			},
 		});

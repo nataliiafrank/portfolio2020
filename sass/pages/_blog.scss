@@ -60,7 +60,7 @@
 	.blog-header {
 		&__container {
 			border-bottom: $border;
-			padding: 25px 0;
+			padding: 25px 0 40px;
 			margin: 0 15px;
 
 			@include mq('md') {
