@@ -1,0 +1,46 @@
+// .error
+@include block('error') {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+
+	// .error__container
+	@include element('container') {
+		text-align: center;
+		width: 290px;
+		margin: auto;
+
+		@include mq('md') {
+			width: 500px;
+		}
+	}
+
+	// .error__heading
+	@include element('heading') {
+		@extend %typography--heading-1;
+		padding-bottom: 15px;
+		border-bottom: $border;
+
+		@include mq('lg') {
+			font-size: 10.2rem;
+		}
+	}
+
+	// .error__copy
+	@include element('copy') {
+		padding: 25px 15px 0;
+	}
+
+	// .error__links
+	@include element('links') {
+		padding-top: 40px;
+	}
+
+	// .error__link
+	@include element('link') {
+		font-size: 1.8rem;
+		margin: 0 20px;
+	}
+}
