@@ -14,7 +14,7 @@ import { initialize as sceneInit } from './intro';
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 const app = () => {
-	sceneInit();
+	// sceneInit();
 	menuInitialize();
 	scrollToInitialize();
 	skillsInitialize();

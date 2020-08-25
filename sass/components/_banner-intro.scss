@@ -1,0 +1,67 @@
+// .banner-intro
+@include block('banner-intro') {
+	height: 100%;
+	width: 100%;
+
+	// .banner-intro__container
+	@include element('container') {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		overflow: hidden;
+		padding-left: 16px;
+
+		@include mq('md') {
+			padding-left: 55px;
+		}
+	}
+
+	// .banner-intro__title
+	@include element('title') {
+		font-size: 10px;
+		position: absolute;
+	}
+
+	// .banner-intro__wrap
+	@include element('wrap') {
+		margin-top: -25px;
+		transform: rotate(-15deg);
+	}
+
+	// .banner-intro__items
+	@include element('items') {
+		@extend %typography--heading-1;
+		animation: textRing 20s linear infinite;
+		margin: 0;
+		transform-style: preserve-3d;
+
+		span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		@for $i from 1 through 14 {
+			span:nth-child(#{$i}) {
+				transform: translate(-50%, -50%) rotate(#{$i * 25}deg) translateY(-120px) rotateX(90deg);
+			}
+		}
+
+		@include mq('md') {
+			@for $i from 1 through 14 {
+				span:nth-child(#{$i}) {
+					transform: translate(-50%, -50%) rotate(#{$i * 25}deg) translateY(-200px) rotateX(90deg);
+				}
+			}
+		}
+
+		@include mq('lg') {
+			@for $i from 1 through 14 {
+				span:nth-child(#{$i}) {
+					transform: translate(-50%, -50%) rotate(#{$i * 25}deg) translateY(-280px) rotateX(90deg);
+				}
+			}
+		}
+	}
+}
