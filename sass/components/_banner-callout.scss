@@ -68,4 +68,28 @@
 			}
 		}
 	}
+
+	// .banner-callout__svg
+	@include element('svg') {
+		fill: $c-white;
+		left: 0;
+		margin-left: 55px;
+		margin-top: -60px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 252px;
+		z-index: -1;
+
+		@include mq('md') {
+			left: 50%;
+			margin-left: 56px;
+			margin-top: -70px;
+		}
+
+		@include mq('lg') {
+			margin-left: 144px;
+			margin-top: -80px;
+		}
+	}
 }
