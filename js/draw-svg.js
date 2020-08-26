@@ -19,7 +19,7 @@ const draw = () => {
 		});
 
 		tl.addLabel('start')
-		.to(item.id, { x: 0 })
+		.to(`#${item.id}`, { x: 0 })
 		.add(function() { item.classList.add('is-drawn') }, 'start')
 	});
 }
