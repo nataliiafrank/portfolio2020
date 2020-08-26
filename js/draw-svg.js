@@ -25,7 +25,7 @@ const draw = () => {
 }
 
 export const initialize = () => {
-	if(!svgSelector) {
+	if(!svgSelector.length) {
 		return;
 	}
 
