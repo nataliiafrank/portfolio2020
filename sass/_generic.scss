@@ -98,7 +98,8 @@
 		transform: rotate(20deg);
 	}
 
-	&:focus {
+	&:focus,
+	&:active {
 		&:before {
 			transform: rotate(0deg);
 			transition: transform ($transition/3) ease ($transition/3);

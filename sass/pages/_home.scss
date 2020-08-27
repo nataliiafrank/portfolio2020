@@ -54,17 +54,26 @@
 
 	&__social {
 		bottom: 0;
-		height: 108px;
 		left: 0;
 		margin-bottom: 80px;
 		margin-left: 16px;
 		position: absolute;
 
 		@include mq('md') {
-			bottom: 50%;
-			margin-bottom: -40px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 0;
 			margin-left: 35px;
-			transform: translate(0, -50%);
+			// transform: translate(0, -50%);
+		}
+
+		ul {
+			@include mq('md') {
+				margin-top: -78px;
+			}
 		}
 
 		.social__item {

@@ -76,7 +76,7 @@
 			&:hover {
 				&::before {
 					@include mq('lg') {
-						transform: translateX(-100%);
+						width: 0;
 					}
 				}
 			}

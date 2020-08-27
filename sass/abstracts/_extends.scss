@@ -249,9 +249,11 @@
 			}
 
 			&:hover {
-				font-weight: 700;
-				&::after {
-					transform: translateX(-101%);
+				@include mq('lg') {
+					font-weight: 700;
+					&::after {
+						transform: translateX(-101%);
+					}
 				}
 			}
 		}
