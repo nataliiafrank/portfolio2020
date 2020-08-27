@@ -99,6 +99,7 @@
 	@include element('menu') {
 		background-color: $c-alabaster;
 		height: 100vh;
+		max-height: -webkit-fill-available;
 		margin-left: -16px;
 		overflow: hidden;
 		position: fixed;

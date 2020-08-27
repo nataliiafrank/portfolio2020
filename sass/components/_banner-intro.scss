@@ -21,6 +21,14 @@
 	@include element('title') {
 		font-size: 10px;
 		position: absolute;
+
+		@include mq('md', $type: 'max') {
+			margin-right: 15px;
+			margin-top: -17px;
+			opacity: 0.5;
+			right: 0;
+			top: 0;
+		}
 	}
 
 	// .banner-intro__wrap
