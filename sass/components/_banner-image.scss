@@ -25,6 +25,7 @@
 		padding-bottom: 72px;
 
 		@include mq('md') {
+			align-self: center;
 			flex: 0 0 50%;
 			padding-bottom: 0;
 		}
@@ -41,11 +42,14 @@
 
 	// .banner-image__image-wrap
 	@include element('image-wrap') {
-		width: calc(210 / 268 * 100%);
 		margin: 0 auto;
 
 		@include mq('md') {
-			width: calc(210 / 268 * 100%);
+			width: calc(210 / 250 * 100%);
+		}
+
+		@include mq('lg', $type: 'max') {
+			padding-top: 50px;
 		}
 
 		@include mq('lg') {
