@@ -224,10 +224,14 @@
 			}
 
 			strong {
-				color: $c-black;
-				background-color: $c-white;
-				font-weight: 700;
-				padding: 1px 3px 2px;
+				background-color: $c-alto;
+				font-style: italic;
+				letter-spacing: 0.5px;
+				padding: 1px 4px 2px;
+			}
+
+			em {
+				font-style: italic;
 			}
 		}
 
@@ -250,7 +254,6 @@
 
 			&:hover {
 				@include mq('lg') {
-					font-weight: 700;
 					&::after {
 						transform: translateX(-101%);
 					}
@@ -325,7 +328,7 @@
 					counter-increment: ol-counter;
 					left: 0;
 					position: absolute;
-					top: 2px;
+					top: 0;
 					margin-left: 5px;
 				}
 			}
