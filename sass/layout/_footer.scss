@@ -5,11 +5,27 @@
 
 	// .footer--blog
 	@include modifier('blog') {
+		.footer__container {
+			padding: 30px 35px;
+		}
+
 		.footer__social {
-			width: 100px;
+			width: auto;
 
 			.social__list {
 				flex-flow: row nowrap;
+
+				@include mq('md') {
+					margin-top: 0;
+				}
+			}
+
+			.social__item {
+				padding-bottom: 0;
+
+				@include mq('md', $type: 'max') {
+					margin-left: 10px;
+				}
 			}
 		}
 	}
@@ -26,11 +42,11 @@
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
-		padding-bottom: 60px;
+		padding-bottom: 40px;
 		padding-top: 35px;
 
 		@include mq('md') {
-			padding: 35px;
+			padding: 30px 35px 15px;
 		}
 	}
 
@@ -50,8 +66,8 @@
 
 			@include mq('md') {
 				flex-flow: row wrap;
+				height: auto;
 				justify-content: center;
-				margin-bottom: -25px;
 			}
 		}
 
@@ -62,7 +78,7 @@
 
 			@include mq('md') {
 				height: auto;
-				margin-bottom: 25px;
+				margin-bottom: 15px;
 				width: 25%;
 			}
 		}
@@ -79,7 +95,7 @@
 		width: 22px;
 
 		@include mq('md') {
-			width: 125px;
+			width: auto;
 		}
 
 		.social__list {
@@ -92,6 +108,19 @@
 			@include mq('md') {
 				align-items: center;
 				flex-flow: row nowrap;
+				margin-top: -15px;
+			}
+		}
+
+		.social__item {
+			&:not(:last-of-type) {
+				@include mq('md', $type: 'max') {
+					padding-bottom: 10px;
+				}
+			}
+
+			@include mq('md') {
+				margin-left: 20px;
 			}
 		}
 

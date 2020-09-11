@@ -80,15 +80,29 @@
 		@include mq('lg') {
 			margin-top: 60px;
 		}
+	}
 
-		&::after {
-			@include pseudo('The end. Thanks for reading this post.');
-			margin: 0 auto;
-			font-style: italic;
+	// .blog-post__share
+	@include element('share') {
+		margin: 0 auto;
+		font-style: italic;
+		max-width: 370px;
+		text-align: center;
+		padding-top: 40px;
+		width: 100%;
+
+		@include mq('lg') {
+			max-width: 510px;
+		}
+
+		p	{
 			opacity: 0.65;
-			text-align: center;
-			padding-top: 40px;
-			width: 100%;
+		}
+
+		// .blog-post__share__buttons
+		@include child('buttons') {
+			filter: grayscale(1);
+			padding-top: 10px;
 		}
 	}
 }

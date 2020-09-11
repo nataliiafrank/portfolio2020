@@ -219,6 +219,13 @@
 	// %typography--wysiwyg
 	@include modifier('wysiwyg') {
 		p {
+			line-height: 22px;
+
+			@include mq('md') {
+				font-size: 1.8rem;
+				line-height: 28px;
+			}
+
 			&:not(:last-child) {
 				margin-bottom: 25px;
 			}

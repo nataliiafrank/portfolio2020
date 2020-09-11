@@ -90,6 +90,7 @@
 
 		// .blog-list__item__text
 		@include child('text') {
+			line-height: 22px;
 			margin-top: 20px;
 			display: -webkit-box;
 			-webkit-line-clamp: 5;

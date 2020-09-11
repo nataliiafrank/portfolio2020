@@ -52,11 +52,23 @@
 			margin-top: 50px;
 		}
 
+		@include mq('lg') {
+			@include mq('xxl', $type: 'max') {
+				margin-top: 40px;
+			}
+		}
+
 		span {
 			@extend %typography--heading-5;
 			cursor: pointer;
 			position: relative;
-			transition: $transition ease;
+			transition: all $transition * 2 ease;
+
+			@include mq('lg') {
+				@include mq('xxl', $type: 'max') {
+					font-size: 4rem;
+				}
+			}
 	
 			&::before {
 				@include pseudo;
@@ -74,6 +86,7 @@
 			}
 
 			&:hover {
+				background-color: $c-alabaster;
 				&::before {
 					@include mq('lg') {
 						width: 0;
