@@ -43,6 +43,7 @@
 	// .banner-image__image-wrap
 	@include element('image-wrap') {
 		margin: 0 auto;
+		filter: grayscale(0.7);
 
 		@include mq('md') {
 			width: calc(210 / 250 * 100%);
