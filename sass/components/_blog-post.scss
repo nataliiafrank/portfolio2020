@@ -26,6 +26,11 @@
 			display: block;
 			margin: 40px 0 60px 0;
 		}
+
+		// .blog-post__header-image__src
+		@include child('src') {
+			max-width: 100%;
+		}
 	}
 
 	// .blog-post__body
