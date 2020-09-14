@@ -226,8 +226,16 @@
 				line-height: 28px;
 			}
 
+			@include mq('lg') {
+				line-height: 30px;
+			}
+
 			&:not(:last-child) {
 				margin-bottom: 25px;
+
+				@include mq('lg') {
+					margin-bottom: 35px;
+				}
 			}
 
 			strong {
@@ -257,6 +265,10 @@
 				height: 1px;
 				transition: $transition ease-in-out;
 				width: 100%;
+
+				@include mq('md') {
+					margin-bottom: 1px;
+				}
 			}
 
 			&:hover {
@@ -285,16 +297,28 @@
 				padding-left: 30px;
 			}
 
+			@include mq('lg') {
+				margin: 50px 0;
+			}
+
 			li {
 				line-height: 28px;
 				padding-left: 20px;
 				position: relative;
+
+				@include mq('md') {
+					font-size: 1.8rem;
+				}
 
 				&:not(:last-child) {
 					padding-bottom: 15px;
 
 					@include mq('md') {
 						padding-bottom: 25px;
+					}
+
+					@include mq('lg') {
+						padding-bottom: 35px;
 					}
 				}
 			}

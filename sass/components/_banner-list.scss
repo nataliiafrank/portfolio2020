@@ -68,10 +68,6 @@
 				font-size: 4rem;
 			}
 
-			@include mq('xxl') {
-				font-size: 5rem;
-			}
-	
 			&::before {
 				@include pseudo;
 				background-color: $c-cod-gray;
@@ -162,15 +158,10 @@
 		// .banner-list__popup__image-wrap
 		@include child('image-wrap') {
 			@include responsive-img(343, 278);
-			filter: grayscale(0.7);
-
-			@include mq('md') {
-				padding-top: 50%;
-			}
 
 			@include mq('lg') {
 				@include responsive-img(674, 546);
-				opacity: 0.7;
+				opacity: 0.75;
 			}
 		}
 
