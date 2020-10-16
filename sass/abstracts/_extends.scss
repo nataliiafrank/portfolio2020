@@ -257,6 +257,11 @@
 			position: relative;
 			transition: $transition ease-in-out;
 			vertical-align: bottom;
+			text-decoration: underline;
+
+			@include mq('md') {
+				text-decoration: none;
+			}
 
 			&::after {
 				@include pseudo;
@@ -265,9 +270,11 @@
 				height: 1px;
 				transition: $transition ease-in-out;
 				width: 100%;
+				visibility: hidden;;
 
 				@include mq('md') {
 					margin-bottom: 1px;
+					visibility: visible;
 				}
 			}
 
