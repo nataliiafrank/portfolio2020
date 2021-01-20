@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "glsl-hsl2rgb": "^1.1.0",
-    "gsap": "^3.4.1",
+    "gsap": "^3.6.0",
     "load-bmfont": "^1.4.1",
     "three": "^0.108.0",
     "three-bmfont-text": "^2.3.0",
